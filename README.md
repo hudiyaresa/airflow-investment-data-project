@@ -44,5 +44,3 @@ These dependencies are specified in the `requirements.txt` file.
 3. Login to airflow UI. Open your browser with address http://localhost:8080
 4. Unpaused `profiling_quality_init` Dags
 5. Unpuased `profiling_quality_pipeline` Dags
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
