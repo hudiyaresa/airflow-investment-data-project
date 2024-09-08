@@ -4,13 +4,104 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
-    container_name: airflow
+    container_name: airflow_standalone
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=${AIRFLOW_DB_URI}
+      - AIRFLOW__CORE__LOAD_DEFAULT_CONNECTIONS=False
+      - AIRFLOW__CORE__FERNET_KEY=${AIRFLOW_FERNET_KEY}
+    depends_on:
+      - airflow_metadata
     ports:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./include:/opt/airflow/include
     networks:
       - airflow-networks
+
+  airflow_metadata:
+    image: postgres:latest
+    container_name: airflow_metadata
+    environment:
+      POSTGRES_USER: ${AIRFLOW_DB_USER}
+      POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD}
+      POSTGRES_DB: ${AIRFLOW_DB_NAME}
+    ports:
+      - 5432:5432
+    volumes:
+      - airflow_metadata:/var/lib/postgresql/data
+    networks:
+      - airflow-networks
+
+  profile_quality_db:
+    image: postgres:latest
+    container_name: profile_quality_db
+    environment:
+      POSTGRES_USER: ${PROFILE_QUALITY_DB_USER}
+      POSTGRES_PASSWORD: ${PROFILE_QUALITY_DB_PASSWORD}
+      POSTGRES_DB: ${PROFILE_QUALITY_DB_NAME}
+    ports:
+      - 5434:5432
+    networks:
+      - airflow-networks
+    volumes:
+      - profile_quality_db:/var/lib/postgresql/data
+
+  dellstore_db:
+    image: postgres:latest
+    container_name: dellstore_db
+    environment:
+      POSTGRES_USER: ${DELLSTORE_DB_USER}
+      POSTGRES_PASSWORD: ${DELLSTORE_DB_PASSWORD}
+      POSTGRES_DB: ${DELLSTORE_DB_NAME}
+    ports:
+      - 5435:5432
+    networks:
+      - airflow-networks
+    volumes:
+      - ./dellstore_db:/docker-entrypoint-initdb.d
+      - dellstore_data:/var/lib/postgresql/data
+
+
+  minio:
+    image: minio/minio:RELEASE.2024-06-13T22-53-53Z
+    container_name: minio
+    hostname: minio
+    restart: always
+    volumes:
+      - minio-data:/data
+    ports:
+      - 9000:9000
+      - 9001:9001
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - airflow-networks
+
+volumes:
+  airflow_metadata:
+    driver: local
+    name: airflow_metadata
+
+  dellstore_data:
+    driver: local
+    name: dellstore_data
+
+  minio-data:
+    driver: local
+    name: minio-data
+
+  profile_quality_db:
+    driver: local
+    name: profile_quality_db
 
 networks:
   airflow-networks:
