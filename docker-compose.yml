@@ -86,6 +86,20 @@ services:
     networks:
       - airflow-networks
 
+  staging_db:
+    image: postgres:latest
+    container_name: staging_db
+    environment:
+      POSTGRES_USER: ${STAGING_DB_USER}
+      POSTGRES_PASSWORD: ${STAGING_DB_PASSWORD}
+      POSTGRES_DB: ${STAGING_DB_NAME}
+    ports:
+      - 5436:5432
+    networks:
+      - airflow-networks
+    volumes:
+      - staging_db:/var/lib/postgresql/data
+
 volumes:
   airflow_metadata:
     driver: local
@@ -102,6 +116,10 @@ volumes:
   profile_quality_db:
     driver: local
     name: profile_quality_db
+
+  staging_db:
+    driver: local
+    name: staging_db
 
 networks:
   airflow-networks:

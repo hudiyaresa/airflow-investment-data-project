@@ -1,46 +1,45 @@
-# Case Live Class Data Orchestrations - Week 2
+# Project Overview
 
-## Overview
-This project is an Apache Airflow pipeline designed for profiling data quality. It extracts data from a source database, processes it, and loads it into a target database while ensuring data quality and profiling.
+This project aims to streamline the process of extracting, transforming, and loading data from diverse sources into a staging database for advanced analysis and processing. Apache Airflow is leveraged to manage and orchestrate the workflows involved in the ETL process, ensuring a seamless and efficient data integration process.
 
-## DAGs Overview
-The project contains two main Directed Acyclic Graphs (DAGs):
-### 1. Profiling Quality Init
-- **DAG ID**: `profiling_quality_init`
-- **Start Date**: September 1, 2024
-- **Schedule**: Once
-- **Purpose**: Initializes the data profiling process.
-- **Tasks**:
-    - **Create Function** : Executes a SQL script to create a function (data_profile_quality) in the dellstore_db database. This function generates a data profile and quality report for all tables in the database.
-    - **Create Bucket** : Checks if a MinIO bucket named data-profile-quality exists. If not, it creates the bucket to store data profiles.
-    - **Create Table** : Executes a SQL script to create a table (data_profile_quality) in the profile_quality_db database to store the profiling results.
+## Project Structure
 
-### 2. Profiling Quality Pipeline
-- **DAG ID**: `profiling_quality_pipeline`
-- **Start Date**: September 1, 2024
-- **Schedule**: Daily
-- **Purpose**: Extracts data from the source database, transforms it, and loads it into the target database while ensuring data profile and quality.
-- **Tasks**:
-    - **Extract** : Retrieve data from the data_profile_quality table in the dellstore_db database. The data is processed and saved as a CSV file in the MinIO bucket.
-    - **Transform and Load** : Read the CSV file from MinIO, adds additional columns (person_in_charge and source), and inserts the transformed data into the profile_quality_db database.
-## Requirements
-The project requires the following Python packages:
-- `pandas`
-- `pendulum`
-- `minio`
+The project is structured into two primary components:
 
-These dependencies are specified in the `requirements.txt` file.
+1. **etl_init**: This component is responsible for initializing the staging database by creating the necessary tables and setting up the environment for data extraction and loading. This includes database schema creation, data type definition, and indexing for optimal performance.
+2. **etl_pipeline**: This component is the core of the project, responsible for extracting data from various sources (databases, APIs, and spreadsheets), transforming the data as needed, and loading it into the staging database. This involves data cleansing, data mapping, and data validation to ensure data consistency and integrity.
 
-## Usage
+## Technologies Used
 
-1. Run airflow standalone container :
-    ```
-    docker compose up --detach
-    ```
-2. Check generated username and password (for Airflow UI login) :
-    ```
-    docker logs airflow | grep username
-    ```
-3. Login to airflow UI. Open your browser with address http://localhost:8080
-4. Unpaused `profiling_quality_init` Dags
-5. Unpuased `profiling_quality_pipeline` Dags
+The project leverages the following technologies to achieve its objectives:
+
+* **Apache Airflow**: For workflow management and orchestration, ensuring a scalable and fault-tolerant ETL process.
+* **Python**: For scripting and data processing, utilizing its extensive libraries for data manipulation and analysis.
+* **PostgreSQL**: For database operations, providing a robust and scalable relational database management system.
+* **Minio**: For object storage, offering a highly available and durable storage solution for large datasets.
+* **Google Sheets API**: For spreadsheet data extraction, enabling seamless integration with Google Sheets for data retrieval.
+* **Requests library**: For API data extraction, simplifying HTTP requests for data retrieval from APIs.
+* **Pandas**: For data manipulation and analysis, providing a powerful library for data processing and analysis.
+
+## How to Use
+
+To utilize this project effectively, follow these steps:
+
+1. **Dependency Installation**: Ensure all necessary dependencies are installed, including Apache Airflow, PostgreSQL, Minio, and the required Python libraries.
+2. **Airflow Configuration**: Configure the necessary connections in Airflow, including the PostgreSQL database, Minio object storage, and Google Sheets API.
+3. **etl_init DAG Trigger**: Trigger the **etl_init** DAG to initialize the staging database, ensuring all necessary tables and schema are created.
+4. **etl_pipeline DAG Trigger**: Trigger the **etl_pipeline** DAG to start the ETL process, extracting, transforming, and loading data into the staging database.
+
+## Contributing
+
+Contributions to this project are highly valued. If you'd like to contribute, please follow these steps:
+
+1. **Repository Forking**: Fork the repository to create a copy for modification.
+2. **Branch Creation**: Create a new branch for your feature or fix to isolate your changes.
+3. **Changes and Commit**: Make your changes and commit them with a descriptive message.
+4. **Branch Push**: Push your branch to your forked repository.
+5. **Pull Request**: Submit a pull request to the original repository, detailing your changes and their impact.
+
+## License
+
+This project is licensed under the Apache License 2.0, ensuring it is open-source and freely available for use and modification.
