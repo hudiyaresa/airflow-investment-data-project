@@ -2,5 +2,6 @@ pandas
 pendulum
 minio
 apache-airflow-providers-google
+apache-airflow-providers-slack
 gspread
 pangres

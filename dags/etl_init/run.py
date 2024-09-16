@@ -1,10 +1,9 @@
-from airflow.decorators import dag, task    
-from airflow.operators.python import PythonOperator
+from airflow.decorators import dag, task, task_group
+from airflow.providers.common.sql.operators.sql import SQLExecuteQueryOperator
 
 from pendulum import datetime
 from helper.minio import MinioClient
-from helper.postgres import Execute
-from etl_pipeline.tasks.dellstore_db import dellstore_db
+from etl_pipeline.tasks.staging.dellstore_db import dellstore_db
 
 @dag(
     dag_id = 'etl_init',
@@ -14,26 +13,35 @@ from etl_pipeline.tasks.dellstore_db import dellstore_db
 )
 
 def etl_init():
-    stg_create_table = PythonOperator(
-        task_id = 'stg_create_table',
-        python_callable = Execute._query,
-        op_kwargs = {
-            "connection_id": "staging_db",
-            "query_path": "/etl_init/query/generate_schema.sql"
-        }
-    )
+    @task_group
+    def generate_schema():
+        stg_generate_schema = SQLExecuteQueryOperator(
+            task_id='stg_generate_schema',
+            conn_id="staging_db",
+            sql="query/staging_schema.sql"
+        )
 
+        warehouse_generate_schema = SQLExecuteQueryOperator(
+            task_id='warehouse_generate_schema',
+            conn_id="warehouse_db",
+            sql="query/warehouse_schema.sql"
+        )
+
+        stg_generate_schema >> warehouse_generate_schema
+    
     @task
     def create_bucket():
         minio_client = MinioClient._get()
-        bucket_name = 'extracted-data'
+        bucket_name = ['extracted-data', 'transformed-data', 'valid-data', 'invalid-data']
         
-        if not minio_client.bucket_exists(bucket_name):
-            minio_client.make_bucket(bucket_name)
+        for bucket in bucket_name:
+            if not minio_client.bucket_exists(bucket):
+                minio_client.make_bucket(bucket)
 
+    @task_group
+    def init_load_stg():
+        dellstore_db(incremental = False)
 
-    stg_create_table >> create_bucket() >> dellstore_db()
-
-
+    create_bucket() >> generate_schema() >> init_load_stg()
 
 etl_init()

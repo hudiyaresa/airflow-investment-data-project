@@ -100,6 +100,20 @@ services:
     volumes:
       - staging_db:/var/lib/postgresql/data
 
+  warehouse_db:
+    image: postgres:latest
+    container_name: warehouse_db
+    environment:
+      POSTGRES_USER: ${WAREHOUSE_DB_USER}
+      POSTGRES_PASSWORD: ${WAREHOUSE_DB_PASSWORD}
+      POSTGRES_DB: ${WAREHOUSE_DB_NAME}
+    ports:
+      - 5437:5432
+    networks:
+      - airflow-networks
+    volumes:
+      - warehouse_db:/var/lib/postgresql/data
+
 volumes:
   airflow_metadata:
     driver: local
@@ -120,6 +134,10 @@ volumes:
   staging_db:
     driver: local
     name: staging_db
+
+  warehouse_db:
+    driver: local
+    name: warehouse_db
 
 networks:
   airflow-networks:
