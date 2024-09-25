@@ -1,0 +1,513 @@
+[2024-09-25T07:46:04.466+0000] {processor.py:186} INFO - Started process (PID=78) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:04.468+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:46:04.478+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:46:04.477+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:04.501+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:46:04.497+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:46:04.502+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:04.557+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.109 seconds
+[2024-09-25T07:46:34.987+0000] {processor.py:186} INFO - Started process (PID=94) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:34.989+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:46:34.994+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:46:34.993+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:35.008+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:46:35.004+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:46:35.009+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:46:35.061+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.090 seconds
+[2024-09-25T07:47:05.971+0000] {processor.py:186} INFO - Started process (PID=113) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:05.974+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:47:05.983+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:47:05.982+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:06.001+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:47:05.994+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:47:06.002+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:06.066+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.123 seconds
+[2024-09-25T07:47:36.786+0000] {processor.py:186} INFO - Started process (PID=131) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:36.788+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:47:36.796+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:47:36.795+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:36.809+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:47:36.804+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:47:36.810+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:47:36.853+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.085 seconds
+[2024-09-25T07:48:07.415+0000] {processor.py:186} INFO - Started process (PID=149) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:07.417+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:48:07.422+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:48:07.421+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:07.432+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:48:07.429+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:48:07.433+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:07.474+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.075 seconds
+[2024-09-25T07:48:38.225+0000] {processor.py:186} INFO - Started process (PID=167) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:38.227+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:48:38.232+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:48:38.231+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:38.243+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:48:38.240+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:48:38.244+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:48:38.286+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.076 seconds
+[2024-09-25T07:49:08.896+0000] {processor.py:186} INFO - Started process (PID=185) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:08.898+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:49:08.904+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:49:08.903+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:08.916+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:49:08.912+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:49:08.917+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:08.963+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.092 seconds
+[2024-09-25T07:49:39.980+0000] {processor.py:186} INFO - Started process (PID=203) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:39.984+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:49:39.991+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:49:39.990+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:40.007+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:49:40.002+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:49:40.008+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:49:40.072+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.111 seconds
+[2024-09-25T07:50:10.852+0000] {processor.py:186} INFO - Started process (PID=221) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:50:10.854+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:50:10.862+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:50:10.861+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:50:10.872+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:50:10.869+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/profiling_quality_pipeline/run.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/profiling_quality_pipeline/run.py", line 4, in <module>
+    from profiling_quality_pipeline.tasks.extract import Extract
+  File "/opt/airflow/dags/profiling_quality_pipeline/tasks/extract.py", line 2, in <module>
+    from helper.minio import MinioClient
+  File "/opt/airflow/dags/helper/minio.py", line 2, in <module>
+    from minio import Minio
+ModuleNotFoundError: No module named 'minio'
+[2024-09-25T07:50:10.873+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:50:10.916+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 0.080 seconds
+[2024-09-25T07:57:31.432+0000] {processor.py:186} INFO - Started process (PID=79) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:57:31.435+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:57:31.442+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:31.441+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:57:32.907+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:57:33.224+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.222+0000] {override.py:1900} INFO - Created Permission View: can edit on DAG:profiling_quality_pipeline
+[2024-09-25T07:57:33.259+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.258+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG:profiling_quality_pipeline
+[2024-09-25T07:57:33.281+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.280+0000] {override.py:1900} INFO - Created Permission View: can read on DAG:profiling_quality_pipeline
+[2024-09-25T07:57:33.306+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.305+0000] {override.py:1900} INFO - Created Permission View: menu access on DAG Run:profiling_quality_pipeline
+[2024-09-25T07:57:33.334+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.333+0000] {override.py:1900} INFO - Created Permission View: can delete on DAG Run:profiling_quality_pipeline
+[2024-09-25T07:57:33.358+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.357+0000] {override.py:1900} INFO - Created Permission View: can create on DAG Run:profiling_quality_pipeline
+[2024-09-25T07:57:33.382+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.382+0000] {override.py:1900} INFO - Created Permission View: can read on DAG Run:profiling_quality_pipeline
+[2024-09-25T07:57:33.384+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.383+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T07:57:33.438+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.434+0000] {dag.py:3262} INFO - Creating ORM DAG for profiling_quality_pipeline
+[2024-09-25T07:57:33.473+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:57:33.473+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T07:57:33.517+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.114 seconds
+[2024-09-25T07:58:04.388+0000] {processor.py:186} INFO - Started process (PID=104) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:04.390+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:58:04.396+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:04.395+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:05.482+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:05.537+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:05.536+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T07:58:05.598+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:05.597+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T07:58:05.638+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.264 seconds
+[2024-09-25T07:58:36.111+0000] {processor.py:186} INFO - Started process (PID=130) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:36.116+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:58:36.124+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:36.123+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:37.950+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:58:38.029+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:38.027+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T07:58:38.112+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:58:38.111+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T07:58:38.163+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.074 seconds
+[2024-09-25T07:59:08.259+0000] {processor.py:186} INFO - Started process (PID=154) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:08.272+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:59:08.277+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:08.277+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:09.714+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:09.777+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:09.776+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T07:59:09.861+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:09.860+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T07:59:09.917+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.673 seconds
+[2024-09-25T07:59:40.067+0000] {processor.py:186} INFO - Started process (PID=179) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:40.079+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T07:59:40.085+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:40.084+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:41.360+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T07:59:41.419+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:41.418+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T07:59:41.484+0000] {logging_mixin.py:190} INFO - [2024-09-25T07:59:41.484+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T07:59:41.524+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.473 seconds
+[2024-09-25T08:00:11.812+0000] {processor.py:186} INFO - Started process (PID=205) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:11.814+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:00:11.820+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:11.819+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:13.038+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:13.090+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:13.089+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:00:13.150+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:13.149+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:00:13.203+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.406 seconds
+[2024-09-25T08:00:43.351+0000] {processor.py:186} INFO - Started process (PID=229) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:43.354+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:00:43.360+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:43.359+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:44.525+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:00:44.574+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:44.573+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:00:44.633+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:00:44.632+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:00:44.675+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.343 seconds
+[2024-09-25T08:01:15.408+0000] {processor.py:186} INFO - Started process (PID=261) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:15.421+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:01:15.427+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:15.426+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:16.573+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:16.627+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:16.626+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:01:16.691+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:16.690+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:01:16.731+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.337 seconds
+[2024-09-25T08:01:47.143+0000] {processor.py:186} INFO - Started process (PID=286) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:47.152+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:01:47.157+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:47.156+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:48.267+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:01:48.326+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:48.325+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:01:48.400+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:01:48.399+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:01:48.446+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.319 seconds
+[2024-09-25T08:02:18.744+0000] {processor.py:186} INFO - Started process (PID=311) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:18.748+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:02:18.754+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:18.753+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:20.914+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:21.033+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:21.032+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:02:21.154+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:21.153+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:02:21.223+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.499 seconds
+[2024-09-25T08:02:51.400+0000] {processor.py:186} INFO - Started process (PID=336) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:51.413+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:02:51.419+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:51.418+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:52.805+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:02:52.858+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:52.857+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:02:52.929+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:02:52.928+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:02:53.001+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.618 seconds
+[2024-09-25T08:03:23.878+0000] {processor.py:186} INFO - Started process (PID=361) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:23.880+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:03:23.886+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:23.885+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:25.059+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:25.136+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:25.134+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:03:25.208+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:25.207+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:03:25.259+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.393 seconds
+[2024-09-25T08:03:56.122+0000] {processor.py:186} INFO - Started process (PID=386) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:56.135+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:03:56.140+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:56.139+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:57.168+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:03:57.231+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:57.230+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:03:57.288+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:03:57.288+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:03:57.330+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.220 seconds
+[2024-09-25T08:04:27.681+0000] {processor.py:186} INFO - Started process (PID=411) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:04:27.693+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:04:27.699+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:04:27.698+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:04:28.716+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:04:28.764+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:04:28.763+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:04:28.823+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:04:28.822+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:04:28.866+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.198 seconds
+[2024-09-25T08:04:59.011+0000] {processor.py:186} INFO - Started process (PID=436) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:04:59.023+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:04:59.028+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:04:59.027+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:04:59.996+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:05:00.055+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:05:00.054+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:05:00.132+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:05:00.131+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:05:00.181+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.181 seconds
+[2024-09-25T08:05:30.420+0000] {processor.py:186} INFO - Started process (PID=461) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:05:30.422+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:05:30.428+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:05:30.427+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:05:31.421+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:05:31.469+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:05:31.468+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:05:31.526+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:05:31.526+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:05:31.566+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.159 seconds
+[2024-09-25T08:06:01.954+0000] {processor.py:186} INFO - Started process (PID=486) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:01.957+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:06:01.962+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:01.961+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:03.131+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:03.186+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:03.185+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:06:03.253+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:03.252+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:06:03.311+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.371 seconds
+[2024-09-25T08:06:33.925+0000] {processor.py:186} INFO - Started process (PID=511) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:33.928+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:06:33.934+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:33.933+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:35.073+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:06:35.129+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:35.128+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:06:35.197+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:06:35.196+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:06:35.251+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.342 seconds
+[2024-09-25T08:07:05.617+0000] {processor.py:186} INFO - Started process (PID=536) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:05.620+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:07:05.625+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:05.625+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:06.693+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:06.759+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:06.758+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:07:06.831+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:06.830+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:07:06.883+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.279 seconds
+[2024-09-25T08:07:37.176+0000] {processor.py:186} INFO - Started process (PID=562) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:37.178+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:07:37.184+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:37.183+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:38.674+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:07:38.749+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:38.747+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:07:38.837+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:07:38.836+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:07:38.891+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.732 seconds
+[2024-09-25T08:08:09.298+0000] {processor.py:186} INFO - Started process (PID=587) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:09.300+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:08:09.305+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:09.304+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:10.296+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:10.341+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:10.340+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:08:10.392+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:10.391+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:08:10.438+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.155 seconds
+[2024-09-25T08:08:41.117+0000] {processor.py:186} INFO - Started process (PID=612) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:41.120+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:08:41.124+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:41.124+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:42.092+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:08:42.135+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:42.134+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:08:42.182+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:08:42.182+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:08:42.218+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.114 seconds
+[2024-09-25T08:09:13.190+0000] {processor.py:186} INFO - Started process (PID=637) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:13.191+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:09:13.196+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:13.196+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:14.229+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:14.272+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:14.271+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:09:14.320+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:14.320+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:09:14.371+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.196 seconds
+[2024-09-25T08:09:44.645+0000] {processor.py:186} INFO - Started process (PID=662) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:44.647+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:09:44.654+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:44.653+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:45.872+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:09:45.931+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:45.930+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:09:45.991+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:09:45.990+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:09:46.042+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.414 seconds
+[2024-09-25T08:10:16.391+0000] {processor.py:186} INFO - Started process (PID=694) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:16.393+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:10:16.399+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:16.398+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:17.796+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:17.853+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:17.852+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:10:17.919+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:17.918+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:10:17.963+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.587 seconds
+[2024-09-25T08:10:49.775+0000] {processor.py:186} INFO - Started process (PID=719) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:49.778+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:10:49.788+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:49.786+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:51.864+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:10:51.942+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:51.940+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:10:52.034+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:10:52.033+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:10:52.104+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.373 seconds
+[2024-09-25T08:11:22.288+0000] {processor.py:186} INFO - Started process (PID=744) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:22.291+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:11:22.299+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:22.298+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:23.709+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:23.766+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:23.765+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:11:23.840+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:23.839+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:11:23.888+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.619 seconds
+[2024-09-25T08:11:54.419+0000] {processor.py:186} INFO - Started process (PID=769) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:54.422+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:11:54.430+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:54.429+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:56.307+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:11:56.384+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:56.382+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:11:56.482+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:11:56.482+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:11:56.539+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.137 seconds
+[2024-09-25T08:12:26.845+0000] {processor.py:186} INFO - Started process (PID=794) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:26.848+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:12:26.854+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:26.853+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:27.873+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:27.935+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:27.933+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:12:27.998+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:27.997+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:12:28.037+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.209 seconds
+[2024-09-25T08:12:58.315+0000] {processor.py:186} INFO - Started process (PID=819) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:58.317+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:12:58.323+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:58.322+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:59.364+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:12:59.410+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:59.410+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:12:59.466+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:12:59.466+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:12:59.506+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.205 seconds
+[2024-09-25T08:13:29.570+0000] {processor.py:186} INFO - Started process (PID=844) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:13:29.583+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:13:29.589+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:13:29.589+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:13:30.714+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:13:30.773+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:13:30.772+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:13:30.841+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:13:30.840+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:13:30.905+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.350 seconds
+[2024-09-25T08:14:01.163+0000] {processor.py:186} INFO - Started process (PID=870) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:01.165+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:14:01.171+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:01.170+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:02.265+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:02.313+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:02.312+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:14:02.374+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:02.373+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:14:02.415+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.266 seconds
+[2024-09-25T08:14:34.177+0000] {processor.py:186} INFO - Started process (PID=896) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:34.179+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:14:34.188+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:34.187+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:35.456+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:14:35.514+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:35.513+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:14:35.585+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:14:35.584+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:14:35.657+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.495 seconds
+[2024-09-25T08:15:05.976+0000] {processor.py:186} INFO - Started process (PID=921) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:05.979+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:15:05.989+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:05.989+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:07.515+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:07.572+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:07.571+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:15:07.642+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:07.642+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:15:07.696+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.737 seconds
+[2024-09-25T08:15:38.222+0000] {processor.py:186} INFO - Started process (PID=946) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:38.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:15:38.230+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:38.229+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:39.343+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:15:39.390+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:39.389+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:15:39.454+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:15:39.454+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:15:39.493+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.286 seconds
+[2024-09-25T08:16:09.686+0000] {processor.py:186} INFO - Started process (PID=971) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:09.688+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:16:09.697+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:09.694+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:10.860+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:10.907+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:10.906+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:16:10.958+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:10.958+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:16:11.004+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.336 seconds
+[2024-09-25T08:16:42.698+0000] {processor.py:186} INFO - Started process (PID=996) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:42.701+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:16:42.720+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:42.719+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:45.318+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:16:45.417+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:45.415+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:16:45.550+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:16:45.549+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:16:45.636+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.975 seconds
+[2024-09-25T08:17:16.121+0000] {processor.py:186} INFO - Started process (PID=1021) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:16.124+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:17:16.139+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:16.138+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:18.689+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:18.820+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:18.819+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:17:18.948+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:18.948+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:17:19.052+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.962 seconds
+[2024-09-25T08:17:49.484+0000] {processor.py:186} INFO - Started process (PID=1052) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:49.487+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:17:49.500+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:49.499+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:51.127+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:17:51.187+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:51.185+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:17:51.271+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:17:51.271+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:17:51.320+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.856 seconds
+[2024-09-25T08:18:21.919+0000] {processor.py:186} INFO - Started process (PID=1078) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:21.925+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:18:21.939+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:21.936+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:23.581+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:23.649+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:23.648+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:18:23.717+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:23.716+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:18:24.151+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.269 seconds
+[2024-09-25T08:18:54.439+0000] {processor.py:186} INFO - Started process (PID=1104) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:54.447+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:18:54.454+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:54.453+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:55.492+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:18:55.538+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:55.537+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:18:55.591+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:18:55.591+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:18:55.645+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.224 seconds
+[2024-09-25T08:19:26.098+0000] {processor.py:186} INFO - Started process (PID=1129) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:26.101+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:19:26.108+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:26.107+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:27.145+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:27.186+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:27.185+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:19:27.486+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:27.485+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:19:27.521+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.443 seconds
+[2024-09-25T08:19:58.194+0000] {processor.py:186} INFO - Started process (PID=1154) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:58.195+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:19:58.200+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:58.199+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:59.175+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:19:59.219+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:59.218+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:19:59.267+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:19:59.267+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:19:59.312+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.132 seconds
+[2024-09-25T08:20:29.603+0000] {processor.py:186} INFO - Started process (PID=1179) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:20:29.606+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:20:29.614+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:20:29.613+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:20:30.643+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:20:30.687+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:20:30.686+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:20:30.736+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:20:30.736+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:20:31.034+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.450 seconds
+[2024-09-25T08:21:01.487+0000] {processor.py:186} INFO - Started process (PID=1204) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:01.490+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:21:01.496+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:01.495+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:02.697+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:02.746+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:02.745+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:21:03.083+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:03.083+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:21:03.122+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.651 seconds
+[2024-09-25T08:21:33.309+0000] {processor.py:186} INFO - Started process (PID=1229) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:33.323+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:21:33.329+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:33.328+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:34.653+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:21:34.728+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:34.726+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:21:34.814+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:21:34.813+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:21:34.867+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.575 seconds
+[2024-09-25T08:22:05.610+0000] {processor.py:186} INFO - Started process (PID=1254) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:05.624+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:22:05.630+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:05.629+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:07.046+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:07.114+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:07.112+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:22:07.203+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:07.202+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:22:07.672+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 2.085 seconds
+[2024-09-25T08:22:37.998+0000] {processor.py:186} INFO - Started process (PID=1282) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:38.001+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:22:38.009+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:38.008+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:39.121+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:22:39.188+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:39.187+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:22:39.569+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:22:39.568+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:22:39.610+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.628 seconds
+[2024-09-25T08:23:09.916+0000] {processor.py:186} INFO - Started process (PID=1307) to work on /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:23:09.920+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/profiling_quality_pipeline/run.py for tasks to queue
+[2024-09-25T08:23:09.930+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:23:09.928+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:23:11.080+0000] {processor.py:925} INFO - DAG(s) 'profiling_quality_pipeline' retrieved from /opt/airflow/dags/profiling_quality_pipeline/run.py
+[2024-09-25T08:23:11.128+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:23:11.127+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-09-25T08:23:11.183+0000] {logging_mixin.py:190} INFO - [2024-09-25T08:23:11.182+0000] {dag.py:4180} INFO - Setting next_dagrun for profiling_quality_pipeline to 2024-09-24 00:00:00+00:00, run_after=2024-09-25 00:00:00+00:00
+[2024-09-25T08:23:11.226+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/profiling_quality_pipeline/run.py took 1.328 seconds
