@@ -1,0 +1,21 @@
+[2024-09-25T11:08:07.210+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-25T11:08:07.277+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.init.create_bucket manual__2024-09-25T11:07:53.721667+00:00 [queued]>
+[2024-09-25T11:08:07.310+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.init.create_bucket manual__2024-09-25T11:07:53.721667+00:00 [queued]>
+[2024-09-25T11:08:07.311+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-25T11:08:07.349+0000] {taskinstance.py:2888} INFO - Executing <Task(_PythonDecoratedOperator): init.create_bucket> on 2024-09-25 11:07:53.721667+00:00
+[2024-09-25T11:08:07.366+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=597) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-25T11:08:07.371+0000] {standard_task_runner.py:72} INFO - Started process 601 to run task
+[2024-09-25T11:08:07.371+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'init.create_bucket', 'manual__2024-09-25T11:07:53.721667+00:00', '--job-id', '157', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpirno3vlv']
+[2024-09-25T11:08:07.380+0000] {standard_task_runner.py:105} INFO - Job 157: Subtask init.create_bucket
+[2024-09-25T11:08:07.517+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.init.create_bucket manual__2024-09-25T11:07:53.721667+00:00 [running]> on host e10075799413
+[2024-09-25T11:08:07.814+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='init.create_bucket' AIRFLOW_CTX_EXECUTION_DATE='2024-09-25T11:07:53.721667+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-25T11:07:53.721667+00:00'
+[2024-09-25T11:08:07.818+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-25T11:08:07.971+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T11:08:08.237+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-25T11:08:08.282+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-25T11:08:08.284+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=init.create_bucket, run_id=manual__2024-09-25T11:07:53.721667+00:00, execution_date=20240925T110753, start_date=20240925T110807, end_date=20240925T110808
+[2024-09-25T11:08:08.396+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-25T11:08:08.522+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T11:08:08.527+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

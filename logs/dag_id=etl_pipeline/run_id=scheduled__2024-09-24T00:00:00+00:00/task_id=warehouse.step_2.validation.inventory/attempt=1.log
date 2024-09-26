@@ -1,0 +1,61 @@
+[2024-09-25T10:01:57.629+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-25T10:01:57.669+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_2.validation.inventory scheduled__2024-09-24T00:00:00+00:00 [queued]>
+[2024-09-25T10:01:57.692+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_2.validation.inventory scheduled__2024-09-24T00:00:00+00:00 [queued]>
+[2024-09-25T10:01:57.693+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-25T10:01:57.716+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): warehouse.step_2.validation.inventory> on 2024-09-24 00:00:00+00:00
+[2024-09-25T10:01:57.728+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=518) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-25T10:01:57.730+0000] {standard_task_runner.py:72} INFO - Started process 529 to run task
+[2024-09-25T10:01:57.732+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'warehouse.step_2.validation.inventory', 'scheduled__2024-09-24T00:00:00+00:00', '--job-id', '87', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmp6j10j5qo']
+[2024-09-25T10:01:57.738+0000] {standard_task_runner.py:105} INFO - Job 87: Subtask warehouse.step_2.validation.inventory
+[2024-09-25T10:01:57.826+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.warehouse.step_2.validation.inventory scheduled__2024-09-24T00:00:00+00:00 [running]> on host 639d778bfb8f
+[2024-09-25T10:01:58.006+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='warehouse.step_2.validation.inventory' AIRFLOW_CTX_EXECUTION_DATE='2024-09-24T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-24T00:00:00+00:00'
+[2024-09-25T10:01:58.012+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-25T10:01:58.055+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T10:01:58.128+0000] {logging_mixin.py:190} INFO -       product_nk  quantity_stock  sales                            product_id
+0              1             138      9  a5b497a2-ed6f-44ac-b923-566bc2d75ff6
+1              2             118     19  7a744859-9610-4858-a38c-0c9e548d518b
+2              3             228     11  37678c23-6c32-428c-979f-d7ab5dbdb673
+3              4             279     12  6a4f5e28-9cdd-451a-8195-a850a8ca12d2
+4              5             382     13  8ef6f02b-cff4-4fda-9277-7176f524d39b
+...          ...             ...    ...                                   ...
+9995        9996             198     13  bb3ee1f8-b95b-41d6-bab9-ff854e615113
+9996        9997             267     16  0b26b8ff-d5f7-40c3-a45f-67c8620d46f0
+9997        9998             352      3  e13c948f-7ad9-4e73-944d-757040041b75
+9998        9999             444     13  0b606231-ce50-486f-b61e-44c8c21a0d3a
+9999       10000            3800      9  cf5c210d-9a5a-46f6-9602-81cab8efdc84
+
+[10000 rows x 4 columns]
+[2024-09-25T10:01:58.151+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10000 entries, 0 to 9999
+Data columns (total 4 columns):
+ #   Column          Non-Null Count  Dtype 
+---  ------          --------------  ----- 
+ 0   product_nk      10000 non-null  int64 
+ 1   quantity_stock  10000 non-null  int64 
+ 2   sales           10000 non-null  int64 
+ 3   product_id      10000 non-null  object
+dtypes: int64(3), object(1)
+memory usage: 312.6+ KB
+[2024-09-25T10:01:58.152+0000] {logging_mixin.py:190} INFO - None
+[2024-09-25T10:01:58.216+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T10:01:58.258+0000] {taskinstance.py:301} INFO -       product_nk  quantity_stock  sales                            product_id
+0              1             138      9  a5b497a2-ed6f-44ac-b923-566bc2d75ff6
+1              2             118     19  7a744859-9610-4858-a38c-0c9e548d518b
+2              3             228     11  37678c23-6c32-428c-979f-d7ab5dbdb673
+3              4             279     12  6a4f5e28-9cdd-451a-8195-a850a8ca12d2
+4              5             382     13  8ef6f02b-cff4-4fda-9277-7176f524d39b
+...          ...             ...    ...                                   ...
+9995        9996             198     13  bb3ee1f8-b95b-41d6-bab9-ff854e615113
+9996        9997             267     16  0b26b8ff-d5f7-40c3-a45f-67c8620d46f0
+9997        9998             352      3  e13c948f-7ad9-4e73-944d-757040041b75
+9998        9999             444     13  0b606231-ce50-486f-b61e-44c8c21a0d3a
+9999       10000            3800      9  cf5c210d-9a5a-46f6-9602-81cab8efdc84
+
+[10000 rows x 4 columns] don't need to validate. Skipped...
+[2024-09-25T10:01:58.283+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-25T10:01:58.284+0000] {taskinstance.py:352} INFO - Marking task as SKIPPED. dag_id=etl_pipeline, task_id=warehouse.step_2.validation.inventory, run_id=scheduled__2024-09-24T00:00:00+00:00, execution_date=20240924T000000, start_date=20240925T100157, end_date=20240925T100158
+[2024-09-25T10:01:58.350+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-25T10:01:58.398+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T10:01:58.402+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

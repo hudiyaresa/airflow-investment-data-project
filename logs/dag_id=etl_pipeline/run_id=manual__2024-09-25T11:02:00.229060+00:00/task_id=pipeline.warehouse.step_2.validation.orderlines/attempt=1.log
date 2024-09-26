@@ -1,0 +1,49 @@
+[2024-09-25T11:07:41.291+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-25T11:07:41.382+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.pipeline.warehouse.step_2.validation.orderlines manual__2024-09-25T11:02:00.229060+00:00 [queued]>
+[2024-09-25T11:07:41.468+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.pipeline.warehouse.step_2.validation.orderlines manual__2024-09-25T11:02:00.229060+00:00 [queued]>
+[2024-09-25T11:07:41.484+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-25T11:07:41.570+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): pipeline.warehouse.step_2.validation.orderlines> on 2024-09-25 11:02:00.229060+00:00
+[2024-09-25T11:07:41.592+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=542) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-25T11:07:41.599+0000] {standard_task_runner.py:72} INFO - Started process 564 to run task
+[2024-09-25T11:07:41.604+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'pipeline.warehouse.step_2.validation.orderlines', 'manual__2024-09-25T11:02:00.229060+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpb2im53b5']
+[2024-09-25T11:07:41.610+0000] {standard_task_runner.py:105} INFO - Job 149: Subtask pipeline.warehouse.step_2.validation.orderlines
+[2024-09-25T11:07:41.778+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.pipeline.warehouse.step_2.validation.orderlines manual__2024-09-25T11:02:00.229060+00:00 [running]> on host e10075799413
+[2024-09-25T11:07:42.041+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='pipeline.warehouse.step_2.validation.orderlines' AIRFLOW_CTX_EXECUTION_DATE='2024-09-25T11:02:00.229060+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-25T11:02:00.229060+00:00'
+[2024-09-25T11:07:42.044+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-25T11:07:42.091+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T11:07:42.427+0000] {logging_mixin.py:190} INFO -        orderline_nk  ...                            product_id
+0                 1  ...  c69f59e6-a3f4-4016-9534-0f3dfbd6d3db
+1                 2  ...  9ca1939f-2a31-412c-994c-254dc6899569
+2                 3  ...  7744de8c-3e90-40d7-975a-d5e3a5ac49aa
+3                 4  ...  485d25b9-ca1b-435e-a216-fe10f25887cf
+4                 5  ...  70214142-c761-4653-bd57-4e62a9036fd9
+...             ...  ...                                   ...
+50260             5  ...  5f5231e3-e09f-4dd5-a52a-e5617ae167b3
+50261             6  ...  f9500b96-204b-4737-b255-79f188772625
+50262             7  ...  6371822f-3c02-4777-8675-f9b3d521e40a
+50263             8  ...  14f3e871-2390-4b74-a66a-f52869eab080
+50264             9  ...  537e3a8b-e038-48e4-8417-84e6cc9d316f
+
+[50265 rows x 5 columns]
+[2024-09-25T11:07:42.532+0000] {logging_mixin.py:190} INFO - <class 'pandas.core.frame.DataFrame'>
+RangeIndex: 50265 entries, 0 to 50264
+Data columns (total 5 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   orderline_nk  50265 non-null  int64 
+ 1   quantity      50265 non-null  int64 
+ 2   order_date    50265 non-null  object
+ 3   order_id      50265 non-null  object
+ 4   product_id    50265 non-null  object
+dtypes: int64(2), object(3)
+memory usage: 1.9+ MB
+[2024-09-25T11:07:42.534+0000] {logging_mixin.py:190} INFO - None
+[2024-09-25T11:07:43.228+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T11:07:43.354+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-25T11:07:43.381+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-25T11:07:43.382+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=pipeline.warehouse.step_2.validation.orderlines, run_id=manual__2024-09-25T11:02:00.229060+00:00, execution_date=20240925T110200, start_date=20240925T110741, end_date=20240925T110743
+[2024-09-25T11:07:43.476+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-25T11:07:43.599+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T11:07:43.604+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

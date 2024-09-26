@@ -1,0 +1,23 @@
+[2024-09-25T11:13:01.623+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-25T11:13:01.704+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.pipeline.warehouse.step_2.extract_transform.inventory manual__2024-09-25T11:07:53.721667+00:00 [queued]>
+[2024-09-25T11:13:01.803+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.pipeline.warehouse.step_2.extract_transform.inventory manual__2024-09-25T11:07:53.721667+00:00 [queued]>
+[2024-09-25T11:13:01.805+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-25T11:13:01.983+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): pipeline.warehouse.step_2.extract_transform.inventory> on 2024-09-25 11:07:53.721667+00:00
+[2024-09-25T11:13:02.047+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1052) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-09-25T11:13:02.063+0000] {standard_task_runner.py:72} INFO - Started process 1073 to run task
+[2024-09-25T11:13:02.102+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'pipeline.warehouse.step_2.extract_transform.inventory', 'manual__2024-09-25T11:07:53.721667+00:00', '--job-id', '260', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpm5bq9dps']
+[2024-09-25T11:13:02.177+0000] {standard_task_runner.py:105} INFO - Job 260: Subtask pipeline.warehouse.step_2.extract_transform.inventory
+[2024-09-25T11:13:02.724+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.pipeline.warehouse.step_2.extract_transform.inventory manual__2024-09-25T11:07:53.721667+00:00 [running]> on host e10075799413
+[2024-09-25T11:13:03.312+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='pipeline.warehouse.step_2.extract_transform.inventory' AIRFLOW_CTX_EXECUTION_DATE='2024-09-25T11:07:53.721667+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-25T11:07:53.721667+00:00'
+[2024-09-25T11:13:03.362+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-25T11:13:03.427+0000] {base.py:84} INFO - Retrieving connection 'staging_db'
+[2024-09-25T11:13:03.700+0000] {base.py:84} INFO - Retrieving connection 'warehouse_db'
+[2024-09-25T11:13:14.869+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-09-25T11:13:14.915+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-25T11:13:14.937+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-25T11:13:14.938+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=pipeline.warehouse.step_2.extract_transform.inventory, run_id=manual__2024-09-25T11:07:53.721667+00:00, execution_date=20240925T110753, start_date=20240925T111301, end_date=20240925T111314
+[2024-09-25T11:13:15.061+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-25T11:13:15.129+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-25T11:13:15.133+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
