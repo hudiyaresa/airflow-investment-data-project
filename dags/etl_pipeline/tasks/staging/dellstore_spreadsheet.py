@@ -13,7 +13,8 @@ def dellstore_spreadsheet():
 
     load = PythonOperator(
         task_id = "load",
-        python_callable = Load._dellstore_spreadsheet
+        python_callable = Load._dellstore_spreadsheet,
+        trigger_rule = 'none_failed'
     )
 
     extract >> load

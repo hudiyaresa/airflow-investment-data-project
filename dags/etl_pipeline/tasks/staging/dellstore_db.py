@@ -14,6 +14,7 @@ def dellstore_db(incremental):
             current_task = PythonOperator(
                 task_id = f'{table_name}',
                 python_callable = Extract._dellstore_db,
+                trigger_rule = 'none_failed',
                 op_kwargs = {
                     'table_name': f'{table_name}',
                     'incremental': incremental

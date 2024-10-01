@@ -39,10 +39,13 @@ class Load:
                     if_row_exists='update'
                 )
 
-            except Exception as e:
+            except:
                 engine.dispose()
                 raise AirflowSkipException(f"{table_name} doesn't have new data. Skipped...")
 
+        except AirflowSkipException as e:
+            raise e
+        
         except Exception as e:
             raise AirflowException(f"Error when loading {table_name} : {str(e)}")
 
@@ -62,13 +65,14 @@ class Load:
 
             try:
                 minio_client = MinioClient._get()
-                data = minio_client.get_object(bucket_name=bucket_name, object_name=object_name).read().decode('utf-8')
+
+                try:
+                    data = minio_client.get_object(bucket_name=bucket_name, object_name=object_name).read().decode('utf-8')
+                except:
+                    raise AirflowSkipException(f"dellstore_api doesn't have new data. Skipped...")
+                
                 data = json.loads(data)
-
                 df = pd.json_normalize(data)
-                if df.empty:
-                    raise AirflowSkipException("Doesn't have new data. Skipped...")
-
                 df = df.set_index(['customer_id', 'order_id', 'orderline_id'])
 
                 upsert(
@@ -78,11 +82,19 @@ class Load:
                     schema='staging',
                     if_row_exists='update'
                 )
-            except:
-                raise AirflowSkipException("Doesn't have new data. Skipped...")
+            except AirflowSkipException as e:
+                engine.dispose()
+                raise e
+            
+            except Exception as e:
+                engine.dispose()
+                raise AirflowException(f"Error when loading data from Dellstore API: {str(e)}")
+            
+        except AirflowSkipException as e:
+            raise e
             
         except Exception as e:
-            raise AirflowException(f"Error when loading data from Dellstore API: {str(e)}")
+            raise e
 
     @staticmethod
     def _dellstore_spreadsheet():
@@ -93,22 +105,28 @@ class Load:
         object_name = f'/temp/dellstore_analytics.csv'
 
         try:
-            df = CustomMinio._get_dataframe(bucket_name, object_name)
-            if df.empty:
-                raise AirflowSkipException("Dataframe is empty. Skipped...")
-
-            df = df.set_index('orderid')
-
             engine = create_engine(PostgresHook(postgres_conn_id='staging_db').get_uri())
 
-            upsert(
-                con=engine,
-                df=df,
-                table_name='order_status_analytic',
-                schema='staging',
-                if_row_exists='update'
-            )
-        except:
-            raise AirflowSkipException(f"Doesn't have new data. Skipped...")
-        finally:
-            engine.dispose()
+            try:
+                df = CustomMinio._get_dataframe(bucket_name, object_name)
+                if df.empty:
+                    raise AirflowSkipException("dellstore_spreadsheet doesn't have data. Skipped...")
+
+                df = df.set_index('orderid')
+
+                upsert(
+                    con=engine,
+                    df=df,
+                    table_name='order_status_analytic',
+                    schema='staging',
+                    if_row_exists='update'
+                )
+            except AirflowSkipException as e:
+                engine.dispose()
+                raise e
+            
+        except AirflowSkipException as e:
+            raise e
+            
+        except Exception as e:
+            raise AirflowException(f"Error when loading data from Dellstore spreadsheet: {str(e)}")

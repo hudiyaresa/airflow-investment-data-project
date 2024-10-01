@@ -1,8 +1,8 @@
 import re
 import pandas as pd
 from helper.minio import CustomMinio
-from airflow.exceptions import AirflowSkipException
-
+from airflow.exceptions import AirflowSkipException, AirflowException
+from datetime import timedelta
 class ValidationType:
     #validation email domain
     def validate_email_format(email):
@@ -33,31 +33,44 @@ class ValidationType:
         return status in ['partial', 'fulfilled', 'backordered']
     
 class Validation:
-    def _validation_data(need_validation, data, valid_bucket, dest_object, invalid_bucket = None, validation_functions = None ):
-        data = CustomMinio._get_dataframe('transformed-data', data)
+    def _data_validations(table_name, need_validation, valid_bucket, incremental, invalid_bucket = None, validation_functions = None, date = None, **kwargs):
+        try:
+            if incremental:
+                object_name = f'{table_name}-{date}.csv'
+            else:
+                object_name = f'{table_name}.csv'
+            
+            data = CustomMinio._get_dataframe('transformed-data', object_name)
+        except Exception as e:
+            raise AirflowSkipException(f"Table {table_name} doesn't have new data to validate. Skipped... : {e}")
 
-        print(data)
-        print(data.info())
-        if need_validation:
-            # Create a report DataFrame
-            report_data = {f'validate_{name}': data[name].apply(func) for name, func in validation_functions.items()}
-            report_df = pd.DataFrame(report_data)
+        try:
+            if need_validation:
+                # Create a report DataFrame
+                report_data = {f'validate_{name}': data[name].apply(func) for name, func in validation_functions.items()}
+                report_df = pd.DataFrame(report_data)
 
-            # Summarize status data by all conditions
-            report_df['all_valid'] = report_df.all(axis = 1)
+                # Summarize status data by all conditions
+                report_df['all_valid'] = report_df.all(axis = 1)
 
-            # Filter out valid rows (all_valid = 'True')
-            valid_data_df = data[report_df['all_valid']]
+                # Filter out valid rows (all_valid = 'True')
+                valid_data_df = data[report_df['all_valid']]
 
-            # Filter out invalid rows (all_valid = 'False')
-            invalid_data_df = data[~report_df['all_valid']]
+                # Filter out invalid rows (all_valid = 'False')
+                invalid_data_df = data[~report_df['all_valid']]
 
-            if (not invalid_data_df.empty):
-                CustomMinio._put_csv(invalid_data_df, invalid_bucket, dest_object)
+                if (not invalid_data_df.empty):
+                    CustomMinio._put_csv(invalid_data_df, invalid_bucket, object_name)
+
+                else:
+                    CustomMinio._put_csv(valid_data_df, valid_bucket, object_name)
 
             else:
-                CustomMinio._put_csv(valid_data_df, valid_bucket, dest_object)
-
-        else:
-            CustomMinio._put_csv(data, valid_bucket, dest_object)
-            raise AirflowSkipException(f"{data} don't need to validate. Skipped...")
+                CustomMinio._put_csv(data, valid_bucket, object_name)
+                raise AirflowSkipException(f"{table_name} don't need to validate. Skipped...")
+        except AirflowSkipException as e:
+            raise e
+        
+        except Exception as e:
+            raise Exception(f"Error when validating {table_name}: {e}")
+            

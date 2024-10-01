@@ -12,286 +12,75 @@ def warehouse(incremental):
     def step_1():
         @task_group
         def extract_transform():
-            categories = PythonOperator(
-                task_id = 'categories',
-                python_callable = ExtractTransform._categories,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
+            tasks = [
+                ('categories', ExtractTransform._categories),
+                ('customers', ExtractTransform._customers),
+                ('customers_history', ExtractTransform._customers_history)
+            ]
 
-            customers = PythonOperator(
-                task_id = 'customers',
-                python_callable = ExtractTransform._customers,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            products = PythonOperator(
-                task_id = 'products',
-                python_callable = ExtractTransform._products,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            orders = PythonOperator(
-                task_id = 'orders',
-                python_callable = ExtractTransform._orders,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            customers_history = PythonOperator(
-                task_id = 'customers_history',
-                python_callable = ExtractTransform._customers_history,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            products_history = PythonOperator(
-                task_id = 'products_history',
-                python_callable = ExtractTransform._products_history,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            orders_history = PythonOperator(
-                task_id = 'orders_history',
-                python_callable = ExtractTransform._orders_history,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            categories
-            customers
-            products
-            orders
-            customers_history
-            products_history
-            orders_history
+            for task_id, python_callable in tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=python_callable,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'incremental': incremental,
+                        'date': '{{ ds }}'
+                    }
+                )
 
         @task_group
         def validation():
-            categories = PythonOperator(
-                task_id = 'categories',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': False,
-                    'data': 'categories.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'categories.csv',
-                }
-            )
+            validation_tasks = [
+                ('categories', False, {}),
+                ('customers', True, {
+                    "email": ValidationType.validate_email_format, 
+                    "phone": ValidationType.validate_phone_format, 
+                    "credit_card_expiration": ValidationType.validate_credit_card_expiration_format
+                }),
+                ('customers_history', True, {
+                    "email": ValidationType.validate_email_format, 
+                    "phone": ValidationType.validate_phone_format, 
+                    "credit_card_expiration": ValidationType.validate_credit_card_expiration_format
+                })
+            ]
 
-            customers = PythonOperator(
-                task_id = 'customers',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'customers.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'customers.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "email": ValidationType.validate_email_format, 
-                        "phone": ValidationType.validate_phone_format, 
-                        "credit_card_expiration": ValidationType.validate_credit_card_expiration_format
+            for task_id, need_validation, validation_functions in validation_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Validation._data_validations,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'need_validation': need_validation,
+                        'valid_bucket': 'valid-data',
+                        'incremental': incremental,
+                        'date': '{{ ds }}' if incremental else None,
+                        'invalid_bucket': 'invalid-data' if need_validation else None,
+                        'validation_functions': validation_functions if need_validation else None
                     }
-                }
-            )
-
-            products = PythonOperator(
-                task_id = 'products',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'products.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'products.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "price": ValidationType.validate_price_range
-                    }
-                }
-            )
-
-            orders = PythonOperator(
-                task_id = 'orders',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'orders.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'orders.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "net_amount": ValidationType.validate_positive_value,
-                        "tax": ValidationType.validate_positive_value,
-                        "total_amount": ValidationType.validate_positive_value
-                    }
-                }
-            )
-
-            customers_history = PythonOperator(
-                task_id = 'customers_history',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'customers_history.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'customers_history.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "email": ValidationType.validate_email_format, 
-                        "phone": ValidationType.validate_phone_format, 
-                        "credit_card_expiration": ValidationType.validate_credit_card_expiration_format
-                    }
-                }
-            )
-
-            products_history = PythonOperator(
-                task_id = 'products_history',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'products_history.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'products_history.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "price": ValidationType.validate_price_range
-                    }
-                }
-            )
-
-            orders_history = PythonOperator(
-                task_id = 'orders_history',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'orders_history.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'orders_history.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "net_amount": ValidationType.validate_positive_value,
-                        "tax": ValidationType.validate_positive_value,
-                        "total_amount": ValidationType.validate_positive_value
-                    }
-                }
-            )
-
-            customers
-            categories
-            customers
-            products
-            orders
-            customers_history
-            products_history
-            orders_history
+                )
 
         @task_group
         def load():
-            categories = PythonOperator(
-                task_id = 'categories',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'categories',
-                    'incremental': incremental,
-                    'table_pkey': 'category_nk',
-                    'date': '{{ ds }}'
-                }
-            )
+            load_tasks = [
+                ('categories', 'category_nk'),
+                ('customers', 'customer_nk'),
+                ('customers_history', 'customer_nk')
+            ]
 
-            customers = PythonOperator(
-                task_id = 'customers',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'customers',
-                    'incremental': incremental,
-                    'table_pkey': 'customer_nk',
-                    'date': '{{ ds }}'
-                }   
-            )
-
-            products = PythonOperator(
-                task_id = 'products',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'products',
-                    'incremental': incremental,
-                    'table_pkey': 'product_nk',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            orders = PythonOperator(
-                task_id = 'orders',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'orders',
-                    'incremental': incremental,
-                    'table_pkey': 'order_nk',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            customers_history = PythonOperator(
-                task_id = 'customers_history',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'customers',
-                    'incremental': incremental,
-                    'table_pkey': 'customer_nk',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            products_history = PythonOperator(
-                task_id = 'products_history',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'products',
-                    'incremental': incremental,
-                    'table_pkey': 'product_nk',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            orders_history = PythonOperator(
-                task_id = 'orders_history',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'orders',
-                    'incremental': incremental,
-                    'table_pkey': 'order_nk',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            categories >> products_history >> products
-            customers_history >> customers >> orders_history >>orders
-            
+            for task_id, table_pkey in load_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Load._warehouse,
+                    trigger_rule='none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'incremental': incremental,
+                        'table_pkey': table_pkey,
+                        'date': '{{ ds }}'
+                    }
+                )
 
         extract_transform() >> validation() >> load()
 
@@ -300,163 +89,162 @@ def warehouse(incremental):
     def step_2():
         @task_group
         def extract_transform():
-            inventory = PythonOperator(
-                task_id = 'inventory',
-                python_callable = ExtractTransform._inventory,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
+            tasks = [
+                ('products_history', ExtractTransform._products_history),
+                ('orders_history', ExtractTransform._orders_history),
+                ('products', ExtractTransform._products),
+                ('orders', ExtractTransform._orders),
+            ]
 
-            orderlines = PythonOperator(
-                task_id = 'orderlines',
-                python_callable = ExtractTransform._orderlines,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-            
-            cust_hist = PythonOperator(
-                task_id = 'cust_hist',
-                python_callable = ExtractTransform._cust_hist,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-            
-            order_status_analytic = PythonOperator(
-                task_id = 'order_status_analytic',
-                python_callable = ExtractTransform._order_status_analytic,
-                op_kwargs = {
-                    'incremental': incremental,
-                    'date': '{{ ds }}'
-                }
-            )
-
-            inventory
-            orderlines
-            cust_hist
-            order_status_analytic
+            for task_id, python_callable in tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=python_callable,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'incremental': incremental,
+                        'date': '{{ ds }}'
+                    }
+                )
             
 
         @task_group
         def validation():
-            inventory = PythonOperator(
-                task_id = 'inventory',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': False,
-                    'data': 'inventory.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'inventory.csv'
-                }
-            )
+            validation_tasks = [
+                ('products_history', True, {
+                    "price": ValidationType.validate_price_range
+                }),
+                ('orders_history', True, {
+                    "net_amount": ValidationType.validate_positive_value,
+                    "tax": ValidationType.validate_positive_value,
+                    "total_amount": ValidationType.validate_positive_value
+                }),
+                ('products', True, {
+                    "price": ValidationType.validate_price_range
+                }),
+                ('orders', True, {
+                    "net_amount": ValidationType.validate_positive_value,
+                    "tax": ValidationType.validate_positive_value,
+                    "total_amount": ValidationType.validate_positive_value
+                }),
+            ]
 
-            orderlines = PythonOperator(
-                task_id = 'orderlines',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'orderlines.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'orderlines.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "quantity": ValidationType.validate_positive_value
+            for task_id, need_validation, validation_functions in validation_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Validation._data_validations,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'need_validation': need_validation,
+                        'valid_bucket': 'valid-data',
+                        'incremental': incremental,
+                        'date': '{{ ds }}' if incremental else None,
+                        'invalid_bucket': 'invalid-data' if need_validation else None,
+                        'validation_functions': validation_functions if need_validation else None
                     }
-                }
-            )
-            
-            cust_hist = PythonOperator(
-                task_id = 'cust_hist',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': False,
-                    'data': 'cust_hist.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'cust_hist.csv'
-                }
-            )
-            
-            order_status_analytic = PythonOperator(
-                task_id = 'order_status_analytic',
-                python_callable = Validation._validation_data,
-                op_kwargs = {
-                    'need_validation': True,
-                    'data': 'order_status_analytic.csv',
-                    'valid_bucket': 'valid-data',
-                    'dest_object': 'order_status_analytic.csv',
-                    'invalid_bucket': 'invalid-data',
-                    'validation_functions': {
-                        "status": ValidationType.validate_order_status
-                    }
-                }
-            )
-
-            inventory
-            orderlines
-            cust_hist
-            order_status_analytic
+                )
 
         @task_group
         def load():
-            inventory = PythonOperator(
-                task_id = 'inventory',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'inventory',
-                    'incremental': incremental,
-                    'table_pkey': 'product_nk',
-                    'date': '{{ ds }}'  
-                }
-            )
+            load_tasks = [
+                ('products_history', 'product_nk'),
+                ('orders_history', 'order_nk'),
+                ('products', 'product_nk'),
+                ('orders', 'order_nk')
+            ]
 
-            orderlines = PythonOperator(
-                task_id = 'orderlines',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {  
-                    'table_name': 'orderlines',
-                    'incremental': incremental,
-                    'table_pkey': ["orderline_nk","order_id","product_id","quantity"],
-                    'date': '{{ ds }}'
-                }
-            )
-            
-            cust_hist = PythonOperator(
-                task_id = 'cust_hist',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'cust_hist',
-                    'incremental': incremental,
-                    'table_pkey': ["customer_id","order_id","product_id"],
-                    'date': '{{ ds }}'
-                }
-            )
-            
-            order_status_analytic = PythonOperator(
-                task_id = 'order_status_analytic',
-                python_callable = Load._warehouse,
-                trigger_rule = 'none_failed',
-                op_kwargs = {
-                    'table_name': 'order_status_analytic',
-                    'incremental': incremental,
-                    'table_pkey': 'order_id',
-                    'date': '{{ ds }}'
-                }
-            )
-
-            inventory
-            orderlines
-            cust_hist
-            order_status_analytic
+            for task_id, table_pkey in load_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Load._warehouse,
+                    trigger_rule='none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'incremental': incremental,
+                        'table_pkey': table_pkey,
+                        'date': '{{ ds }}'
+                    }
+                )
             
 
         extract_transform() >> validation() >> load()
 
-    step_1() >> step_2()
+    @task_group
+    def step_3():
+        @task_group
+        def extract_transform():
+            tasks = [
+                ('inventory', ExtractTransform._inventory),
+                ('orderlines', ExtractTransform._orderlines),
+                ('cust_hist', ExtractTransform._cust_hist),
+                ('order_status_analytic', ExtractTransform._order_status_analytic)
+            ]
+
+            for task_id, python_callable in tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=python_callable,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'incremental': incremental,
+                        'date': '{{ ds }}'
+                    }
+                )
+            
+
+        @task_group
+        def validation():
+            validation_tasks = [
+                ('inventory', False, {}),
+                ('orderlines', True, {
+                    "quantity": ValidationType.validate_positive_value
+                }),
+                ('cust_hist', False, {}),
+                ('order_status_analytic', True, {
+                    "status": ValidationType.validate_order_status
+                })
+            ]
+
+            for task_id, need_validation, validation_functions in validation_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Validation._data_validations,
+                    trigger_rule = 'none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'need_validation': need_validation,
+                        'valid_bucket': 'valid-data',
+                        'incremental': incremental,
+                        'date': '{{ ds }}' if incremental else None,
+                        'invalid_bucket': 'invalid-data' if need_validation else None,
+                        'validation_functions': validation_functions if need_validation else None
+                    }
+                )
+
+        @task_group
+        def load():
+            load_tasks = [
+                ('inventory', 'product_nk'),
+                ('orderlines', ["orderline_nk", "order_id", "product_id", "quantity"]),
+                ('cust_hist', ["customer_id", "order_id", "product_id"]),
+                ('order_status_analytic', 'order_id')
+            ]
+
+            for task_id, table_pkey in load_tasks:
+                PythonOperator(
+                    task_id=task_id,
+                    python_callable=Load._warehouse,
+                    trigger_rule='none_failed',
+                    op_kwargs={
+                        'table_name': task_id,
+                        'incremental': incremental,
+                        'table_pkey': table_pkey,
+                        'date': '{{ ds }}'
+                    }
+                )
+            
+
+        extract_transform() >> validation() >> load()
+
+    step_1() >> step_2() >> step_3()

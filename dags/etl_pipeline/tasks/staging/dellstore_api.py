@@ -14,7 +14,8 @@ def dellstore_api():
 
     load = PythonOperator(
         task_id = 'load',
-        python_callable = Load._dellstore_api
+        python_callable = Load._dellstore_api,
+        trigger_rule = 'none_failed'
     )
 
     extract >> load

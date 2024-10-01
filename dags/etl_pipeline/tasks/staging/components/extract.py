@@ -45,19 +45,21 @@ class Extract:
 
             cursor.execute(query)
             result = cursor.fetchall()
+            cursor.close()
+            connection.commit()
+            connection.close()
+
             column_list = [desc[0] for desc in cursor.description]
             df = pd.DataFrame(result, columns=column_list)
-
+        
             if df.empty:
                 raise AirflowSkipException(f"{table_name} doesn't have new data. Skipped...")
 
             bucket_name = 'extracted-data'
             CustomMinio._put_csv(df, bucket_name, object_name)
 
-            cursor.close()
-            connection.commit()
-            connection.close()
-
+        except AirflowSkipException as e:
+            raise e
         except Exception as e:
             raise AirflowException(f"Error when extracting {table_name} : {str(e)}")
 
@@ -73,21 +75,31 @@ class Extract:
             AirflowException: If failed to fetch data from Dellstore API.
             AirflowSkipException: If no new data is found.
         """
-        response = requests.get(
-            url=Variable.get('dellstore_api_url'),
-            params={"start_date": ds, "end_date": ds},
-        )
+        try:
+            response = requests.get(
+                url=Variable.get('dellstore_api_url'),
+                params={"start_date": ds, "end_date": ds},
+            )
 
-        if response.status_code != 200:
-            raise AirflowException(f"Failed to fetch data from Dellstore API. Status code: {response.status_code}")
+            if response.status_code != 200:
+                raise AirflowException(f"Failed to fetch data from Dellstore API. Status code: {response.status_code}")
 
-        json_data = response.json()
-        if not json_data:
-            raise AirflowSkipException("No new data in Dellstore API. Skipped...")
+            json_data = response.json()
+            if not json_data:
+                raise AirflowSkipException("No new data in Dellstore API. Skipped...")
 
-        bucket_name = 'extracted-data'
-        object_name = f'/temp/dellstore_api_{(pd.to_datetime(ds) - timedelta(days=1)).strftime("%Y-%m-%d")}.json'
-        CustomMinio._put_json(json_data, bucket_name, object_name)
+            bucket_name = 'extracted-data'
+            object_name = f'/temp/dellstore_api_{(pd.to_datetime(ds) - timedelta(days=1)).strftime("%Y-%m-%d")}.json'
+            CustomMinio._put_json(json_data, bucket_name, object_name)
+        
+        except AirflowSkipException as e:
+            raise e
+        
+        except AirflowException as e:
+            raise e
+        
+        except Exception as e:
+            raise AirflowException(f"Error when extracting Dellstore API: {str(e)}")
 
     @staticmethod
     def _dellstore_spreadsheet():
@@ -112,6 +124,9 @@ class Extract:
                 raise AirflowSkipException("No data in Dellstore Analytics Spreadsheets. Skipped...")
 
             CustomMinio._put_csv(df, 'extracted-data', f'/temp/dellstore_analytics.csv')
-
+        
+        except AirflowSkipException as e:
+            raise e
+        
         except Exception as e:
             raise AirflowException(f"Error when extracting Dellstore Analytics Spreadsheets: {str(e)}")

@@ -1,7 +1,7 @@
 from airflow.hooks.base import BaseHook
 from minio import Minio
 from io import BytesIO
-from datetime import timedelta
+import json
 import pandas as pd
 
 class MinioClient:
@@ -28,6 +28,20 @@ class CustomMinio:
             data = csv_buffer,
             length = len(csv_bytes),
             content_type = 'application/csv'
+        )
+
+    def _put_json(json_data, bucket_name, object_name):
+        json_string = json.dumps(json_data)
+        json_bytes = json_string.encode('utf-8')
+        json_buffer = BytesIO(json_bytes)
+
+        minio_client = MinioClient._get()
+        minio_client.put_object(
+            bucket_name = bucket_name,
+            object_name = object_name,
+            data = json_buffer,
+            length = len(json_bytes),
+            content_type = 'application/json'
         )
 
     def _get_dataframe(bucket_name, object_name):
