@@ -1,10 +1,14 @@
 from airflow.decorators import dag
-from airflow.providers.slack.notifications.slack_notifier import SlackNotifier
 from pendulum import datetime
-import traceback
 
 from etl_pipeline.tasks.staging.main import staging
 from etl_pipeline.tasks.warehouse.main import warehouse
+from helper.callbacks.slack_notifier import slack_notifier
+from airflow.models.variable import Variable
+
+default_args = {
+    'on_failure_callback': slack_notifier
+}
 
 @dag(
     dag_id='etl_pipeline',
@@ -12,14 +16,12 @@ from etl_pipeline.tasks.warehouse.main import warehouse
     start_date=datetime(2024, 9, 1),
     schedule="@daily",
     catchup=False,
-    on_failure_callback=SlackNotifier(
-        slack_conn_id='slack',
-        channel='etlpipeline',
-        text="ETL Pipeline failed"
-    )
+    default_args=default_args
 )
 
 def etl_pipeline():
-    staging(incremental=True) >> warehouse(incremental=True)
+    incremental_mode = eval(Variable.get('etl_pipeline_incremental_mode'))
+
+    staging(incremental=incremental_mode) >> warehouse(incremental=incremental_mode)
 
 etl_pipeline()
