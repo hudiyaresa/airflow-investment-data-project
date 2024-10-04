@@ -1,0 +1,294 @@
+[2024-10-04T06:36:48.878+0000] {processor.py:186} INFO - Started process (PID=277) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:36:48.880+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:36:48.886+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:36:48.885+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:36:48.916+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:36:49.387+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:36:49.386+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:36:49.460+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:36:49.460+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:36:49.552+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.690 seconds
+[2024-10-04T06:37:19.668+0000] {processor.py:186} INFO - Started process (PID=541) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:19.670+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:37:19.676+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:19.675+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:19.706+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:20.028+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:20.027+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:37:20.077+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:20.076+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:37:20.125+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.472 seconds
+[2024-10-04T06:37:50.840+0000] {processor.py:186} INFO - Started process (PID=710) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:50.845+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:37:50.849+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:50.848+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:50.866+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:37:51.060+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:51.060+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:37:51.096+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:37:51.096+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:37:51.132+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.303 seconds
+[2024-10-04T06:38:22.021+0000] {processor.py:186} INFO - Started process (PID=760) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:22.024+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:38:22.029+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:22.028+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:22.050+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:22.300+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:22.299+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:38:22.350+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:22.349+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:38:22.400+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.391 seconds
+[2024-10-04T06:38:53.374+0000] {processor.py:186} INFO - Started process (PID=809) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:53.378+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:38:53.383+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:53.382+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:53.407+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:38:53.723+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:53.722+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:38:53.773+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:38:53.772+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:38:53.813+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.453 seconds
+[2024-10-04T06:39:24.376+0000] {processor.py:186} INFO - Started process (PID=991) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:24.381+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:39:24.392+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:24.390+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:24.478+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:25.062+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:25.060+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:39:25.173+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:25.172+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:39:25.242+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.898 seconds
+[2024-10-04T06:39:55.932+0000] {processor.py:186} INFO - Started process (PID=1129) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:55.935+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:39:55.938+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:55.937+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:55.952+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:39:56.125+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:56.124+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:39:56.155+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:39:56.154+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:39:56.187+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.265 seconds
+[2024-10-04T06:40:26.546+0000] {processor.py:186} INFO - Started process (PID=1178) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:26.559+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:40:26.562+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:26.561+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:26.577+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:26.750+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:26.750+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:40:26.779+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:26.779+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:40:26.807+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.271 seconds
+[2024-10-04T06:40:56.905+0000] {processor.py:186} INFO - Started process (PID=1227) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:56.908+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:40:56.910+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:56.910+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:56.922+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:40:57.094+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:57.093+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:40:57.125+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:40:57.124+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:40:57.149+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.253 seconds
+[2024-10-04T06:41:27.212+0000] {processor.py:186} INFO - Started process (PID=1276) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:27.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:41:27.227+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:27.227+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:27.240+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:27.392+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:27.392+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:41:27.419+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:27.418+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:41:27.453+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.249 seconds
+[2024-10-04T06:41:57.691+0000] {processor.py:186} INFO - Started process (PID=1325) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:57.704+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:41:57.712+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:57.711+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:57.741+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:41:58.028+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:58.027+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:41:58.071+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:41:58.070+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:41:58.108+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.432 seconds
+[2024-10-04T06:42:28.501+0000] {processor.py:186} INFO - Started process (PID=1374) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:28.514+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:42:28.517+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:28.516+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:28.530+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:28.701+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:28.701+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:42:28.731+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:28.731+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:42:28.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.282 seconds
+[2024-10-04T06:42:58.869+0000] {processor.py:186} INFO - Started process (PID=1423) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:58.871+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:42:58.875+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:58.874+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:58.896+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:42:59.071+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:59.070+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:42:59.101+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:42:59.101+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:42:59.131+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.271 seconds
+[2024-10-04T06:43:29.176+0000] {processor.py:186} INFO - Started process (PID=1472) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:43:29.179+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:43:29.185+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:43:29.184+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:43:29.198+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:43:29.401+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:43:29.400+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:43:29.446+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:43:29.445+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:43:29.478+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.317 seconds
+[2024-10-04T06:43:59.693+0000] {processor.py:186} INFO - Started process (PID=1521) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:43:59.695+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:43:59.702+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:43:59.701+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:43:59.729+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:44:00.022+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:44:00.021+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:44:00.081+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:44:00.080+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:44:00.122+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.460 seconds
+[2024-10-04T06:44:30.832+0000] {processor.py:186} INFO - Started process (PID=1570) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:44:30.845+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:44:30.850+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:44:30.849+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:44:30.871+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:44:31.067+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:44:31.066+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:44:31.106+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:44:31.106+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:44:31.149+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.330 seconds
+[2024-10-04T06:45:01.581+0000] {processor.py:186} INFO - Started process (PID=1619) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:01.594+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:45:01.599+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:01.599+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:01.616+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:01.839+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:01.839+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:45:01.881+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:01.880+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:45:01.919+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.350 seconds
+[2024-10-04T06:45:32.656+0000] {processor.py:186} INFO - Started process (PID=1668) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:32.658+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:45:32.661+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:32.661+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:32.676+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:45:32.874+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:32.874+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:45:32.914+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:45:32.914+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:45:32.949+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.309 seconds
+[2024-10-04T06:46:42.351+0000] {processor.py:186} INFO - Started process (PID=206) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:46:42.354+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:46:42.358+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:46:42.358+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:46:42.381+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:46:42.658+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:46:42.657+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:46:42.707+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:46:42.707+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:46:42.745+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.406 seconds
+[2024-10-04T06:47:13.082+0000] {processor.py:186} INFO - Started process (PID=272) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:13.083+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:47:13.086+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:13.086+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:13.102+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:13.339+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:13.338+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:47:13.375+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:13.374+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:47:13.410+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.340 seconds
+[2024-10-04T06:47:43.734+0000] {processor.py:186} INFO - Started process (PID=445) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:43.742+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:47:43.755+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:43.752+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:43.818+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:47:44.571+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:44.569+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:47:44.786+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:47:44.772+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:47:44.900+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 1.207 seconds
+[2024-10-04T06:48:15.039+0000] {processor.py:186} INFO - Started process (PID=590) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:15.052+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:48:15.055+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:15.055+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:15.068+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:15.262+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:15.260+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:48:15.297+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:15.297+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:48:15.329+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.299 seconds
+[2024-10-04T06:48:46.037+0000] {processor.py:186} INFO - Started process (PID=639) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:46.039+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:48:46.044+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:46.044+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:46.064+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:48:46.509+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:46.508+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:48:46.550+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:48:46.550+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:48:46.585+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.562 seconds
+[2024-10-04T06:49:16.671+0000] {processor.py:186} INFO - Started process (PID=688) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:16.681+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:49:16.687+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:16.686+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:16.712+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:16.978+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:16.977+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:49:17.018+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:17.018+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:49:17.072+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.418 seconds
+[2024-10-04T06:49:47.904+0000] {processor.py:186} INFO - Started process (PID=737) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:47.907+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:49:47.911+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:47.910+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:47.928+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:49:48.244+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:48.243+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:49:48.284+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:49:48.284+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:49:48.326+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.436 seconds
+[2024-10-04T06:50:18.382+0000] {processor.py:186} INFO - Started process (PID=793) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:18.384+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:50:18.388+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:18.387+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:18.403+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:18.637+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:18.637+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:50:18.665+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:18.665+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:50:18.694+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.324 seconds
+[2024-10-04T06:50:48.996+0000] {processor.py:186} INFO - Started process (PID=847) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:48.998+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:50:49.001+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:49.000+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:49.015+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:50:49.207+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:49.206+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:50:49.238+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:50:49.238+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:50:49.275+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.288 seconds
+[2024-10-04T06:51:19.725+0000] {processor.py:186} INFO - Started process (PID=891) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:19.728+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:51:19.734+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:19.733+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:19.762+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:20.033+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:20.032+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:51:20.078+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:20.078+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:51:20.114+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.410 seconds
+[2024-10-04T06:51:50.295+0000] {processor.py:186} INFO - Started process (PID=945) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:50.297+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:51:50.300+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:50.299+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:50.315+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:51:50.509+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:50.508+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:51:50.537+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:51:50.537+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:51:50.562+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.274 seconds
+[2024-10-04T06:52:21.324+0000] {processor.py:186} INFO - Started process (PID=997) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:21.326+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:52:21.331+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:21.330+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:21.351+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:21.598+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:21.597+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:52:21.649+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:21.648+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:52:21.699+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.384 seconds
+[2024-10-04T06:52:51.767+0000] {processor.py:186} INFO - Started process (PID=1185) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:51.770+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:52:51.776+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:51.775+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:51.805+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:52:52.251+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:52.249+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:52:52.374+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:52:52.374+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:52:52.466+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.719 seconds
+[2024-10-04T06:53:23.073+0000] {processor.py:186} INFO - Started process (PID=1326) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:23.076+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:53:23.080+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:23.079+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:23.105+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:23.371+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:23.370+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:53:23.407+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:23.407+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:53:23.438+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.378 seconds
+[2024-10-04T06:53:53.578+0000] {processor.py:186} INFO - Started process (PID=1375) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:53.581+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:53:53.583+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:53.583+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:53.603+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:53:53.802+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:53.800+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:53:53.862+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:53:53.862+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:53:53.913+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.344 seconds
+[2024-10-04T06:54:24.075+0000] {processor.py:186} INFO - Started process (PID=1424) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:24.088+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:54:24.092+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:24.091+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:24.104+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:24.264+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:24.264+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:54:24.292+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:24.292+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:54:24.330+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.263 seconds
+[2024-10-04T06:54:55.021+0000] {processor.py:186} INFO - Started process (PID=1480) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:55.023+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:54:55.029+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:55.028+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:55.049+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:54:55.319+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:55.318+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:54:55.371+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:54:55.370+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:54:55.408+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.400 seconds
+[2024-10-04T06:55:25.913+0000] {processor.py:186} INFO - Started process (PID=1534) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:25.916+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:55:25.921+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:25.921+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:25.945+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:26.270+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:26.268+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:55:26.329+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:26.329+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:55:26.361+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.461 seconds
+[2024-10-04T06:55:56.534+0000] {processor.py:186} INFO - Started process (PID=1583) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:56.536+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:55:56.541+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:56.541+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:56.570+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:55:56.879+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:56.878+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:55:56.926+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:55:56.926+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:55:56.979+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.462 seconds
+[2024-10-04T06:56:27.044+0000] {processor.py:186} INFO - Started process (PID=1655) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:27.046+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:56:27.049+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:27.048+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:27.068+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:27.258+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:27.257+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:56:27.303+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:27.302+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:56:27.349+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.317 seconds
+[2024-10-04T06:56:58.348+0000] {processor.py:186} INFO - Started process (PID=1849) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:58.368+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:56:58.374+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:58.373+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:58.404+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:56:58.680+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:58.679+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:56:58.727+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:56:58.727+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:56:58.773+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.468 seconds
+[2024-10-04T06:57:29.500+0000] {processor.py:186} INFO - Started process (PID=2045) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:57:29.502+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:57:29.507+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:57:29.506+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:57:29.531+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:57:29.696+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:57:29.694+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:57:29.727+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:57:29.727+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:57:29.757+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.269 seconds
+[2024-10-04T06:58:00.462+0000] {processor.py:186} INFO - Started process (PID=2094) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:00.463+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:58:00.467+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:00.467+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:00.479+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:00.636+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:00.636+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:58:00.664+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:00.664+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:58:00.696+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.245 seconds
+[2024-10-04T06:58:31.705+0000] {processor.py:186} INFO - Started process (PID=2143) to work on /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:31.708+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/materi/retry.py for tasks to queue
+[2024-10-04T06:58:31.713+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:31.713+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:31.734+0000] {processor.py:925} INFO - DAG(s) 'retry_dag' retrieved from /opt/airflow/dags/materi/retry.py
+[2024-10-04T06:58:31.989+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:31.988+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2024-10-04T06:58:32.020+0000] {logging_mixin.py:190} INFO - [2024-10-04T06:58:32.020+0000] {dag.py:4180} INFO - Setting next_dagrun for retry_dag to 2024-10-05 00:00:00+00:00, run_after=2024-10-06 00:00:00+00:00
+[2024-10-04T06:58:32.051+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/materi/retry.py took 0.360 seconds

@@ -17,6 +17,8 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./include:/opt/airflow/include
+      - ./jobs:/opt/airflow/jobs
+      - ./logs:/opt/airflow/logs
     networks:
       - airflow-networks
 
@@ -113,6 +115,34 @@ services:
       - airflow-networks
     volumes:
       - warehouse_db:/var/lib/postgresql/data
+
+  spark-master:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    command: bin/spark-class org.apache.spark.deploy.master.Master
+    container_name: spark-master
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+    networks:
+      - airflow-networks
+
+  spark-worker:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    container_name: spark-worker
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
+      SPARK_MASTER_URL: spark://spark-master:7077
+    networks:
+      - airflow-networks
 
 volumes:
   airflow_metadata:

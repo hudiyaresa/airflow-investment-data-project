@@ -1,0 +1,78 @@
+[2024-10-03T07:21:53.800+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-03T07:21:53.833+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T07:21:53.849+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T07:21:53.850+0000] {taskinstance.py:2865} INFO - Starting attempt 23 of 23
+[2024-10-03T07:21:53.872+0000] {taskinstance.py:2888} INFO - Executing <Task(SparkSubmitOperator): warehouse.step_1.extract_transform.categories> on 2024-10-02 00:00:00+00:00
+[2024-10-03T07:21:53.887+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'warehouse.step_1.extract_transform.categories', 'scheduled__2024-10-02T00:00:00+00:00', '--job-id', '13564', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpntu8_j3m']
+[2024-10-03T07:21:53.892+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=28913) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-10-03T07:21:53.892+0000] {standard_task_runner.py:105} INFO - Job 13564: Subtask warehouse.step_1.extract_transform.categories
+[2024-10-03T07:21:53.893+0000] {standard_task_runner.py:72} INFO - Started process 28915 to run task
+[2024-10-03T07:21:54.003+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [running]> on host 8c0d519f07a3
+[2024-10-03T07:21:54.173+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='warehouse.step_1.extract_transform.categories' AIRFLOW_CTX_EXECUTION_DATE='2024-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='23' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-02T00:00:00+00:00'
+[2024-10-03T07:21:54.175+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-03T07:21:54.196+0000] {base.py:84} INFO - Retrieving connection 'spark-conn'
+[2024-10-03T07:21:54.197+0000] {spark_submit.py:335} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark dags/etl_pipeline/tasks/warehouse/components/extract_transform.py categories True 2024-10-02
+[2024-10-03T07:21:54.265+0000] {spark_submit.py:488} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-10-03T07:22:01.697+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO SparkContext: Running Spark version 3.5.3
+[2024-10-03T07:22:01.701+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO SparkContext: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+[2024-10-03T07:22:01.703+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO SparkContext: Java version 17.0.12
+[2024-10-03T07:22:01.809+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-10-03T07:22:01.978+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO ResourceUtils: ==============================================================
+[2024-10-03T07:22:01.980+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-10-03T07:22:01.981+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO ResourceUtils: ==============================================================
+[2024-10-03T07:22:01.983+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:01 INFO SparkContext: Submitted application: Extract Transform - categories
+[2024-10-03T07:22:02.021+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-10-03T07:22:02.034+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO ResourceProfile: Limiting resource is cpu
+[2024-10-03T07:22:02.037+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-10-03T07:22:02.123+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SecurityManager: Changing view acls to: ***
+[2024-10-03T07:22:02.124+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SecurityManager: Changing modify acls to: ***
+[2024-10-03T07:22:02.127+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SecurityManager: Changing view acls groups to:
+[2024-10-03T07:22:02.129+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SecurityManager: Changing modify acls groups to:
+[2024-10-03T07:22:02.131+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-10-03T07:22:02.667+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO Utils: Successfully started service 'sparkDriver' on port 44979.
+[2024-10-03T07:22:02.734+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SparkEnv: Registering MapOutputTracker
+[2024-10-03T07:22:02.821+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SparkEnv: Registering BlockManagerMaster
+[2024-10-03T07:22:02.860+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-10-03T07:22:02.861+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-10-03T07:22:02.871+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-10-03T07:22:02.925+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-a838930f-b600-4e5b-96b2-eea04f2d20ec
+[2024-10-03T07:22:02.955+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-10-03T07:22:02.986+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:02 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-10-03T07:22:03.213+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-10-03T07:22:03.326+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-10-03T07:22:03.547+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-10-03T07:22:03.656+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO TransportClientFactory: Successfully created connection to spark-master/172.20.0.2:7077 after 64 ms (0 ms spent in bootstraps)
+[2024-10-03T07:22:03.854+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241003072203-0020
+[2024-10-03T07:22:03.863+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241003072203-0020/0 on worker-20241003061731-172.20.0.9-38803 (172.20.0.9:38803) with 2 core(s)
+[2024-10-03T07:22:03.866+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO StandaloneSchedulerBackend: Granted executor ID app-20241003072203-0020/0 on hostPort 172.20.0.9:38803 with 2 core(s), 1024.0 MiB RAM
+[2024-10-03T07:22:03.879+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39261.
+[2024-10-03T07:22:03.879+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO NettyBlockTransferService: Server created on 8c0d519f07a3:39261
+[2024-10-03T07:22:03.882+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-10-03T07:22:03.896+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 8c0d519f07a3, 39261, None)
+[2024-10-03T07:22:03.904+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO BlockManagerMasterEndpoint: Registering block manager 8c0d519f07a3:39261 with 434.4 MiB RAM, BlockManagerId(driver, 8c0d519f07a3, 39261, None)
+[2024-10-03T07:22:03.910+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 8c0d519f07a3, 39261, None)
+[2024-10-03T07:22:03.912+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 8c0d519f07a3, 39261, None)
+[2024-10-03T07:22:03.964+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:03 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241003072203-0020/0 is now RUNNING
+[2024-10-03T07:22:04.520+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:04 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-10-03T07:22:07.258+0000] {spark_submit.py:488} INFO - [2024-10-03T07:22:07.255+0000] {base.py:84} INFO - Retrieving connection 'staging_db'
+[2024-10-03T07:22:07.277+0000] {spark_submit.py:488} INFO - tidak ada data
+[2024-10-03T07:22:07.279+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-10-03T07:22:07.304+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO SparkUI: Stopped Spark web UI at http://8c0d519f07a3:4040
+[2024-10-03T07:22:07.313+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-10-03T07:22:07.321+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-10-03T07:22:07.362+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-10-03T07:22:07.383+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO MemoryStore: MemoryStore cleared
+[2024-10-03T07:22:07.386+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO BlockManager: BlockManager stopped
+[2024-10-03T07:22:07.399+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-10-03T07:22:07.404+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-10-03T07:22:07.418+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:07 INFO SparkContext: Successfully stopped SparkContext
+[2024-10-03T07:22:07.778+0000] {spark_submit.py:488} INFO - [2024-10-03T07:22:07.777+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2024-10-03T07:22:08.454+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:08 INFO ShutdownHookManager: Shutdown hook called
+[2024-10-03T07:22:08.456+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-36f0eb99-1003-4202-ab14-96f2b197da1b/pyspark-0560a63f-1cd1-4a0d-831d-4398ed9d965a
+[2024-10-03T07:22:08.459+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-36f0eb99-1003-4202-ab14-96f2b197da1b
+[2024-10-03T07:22:08.463+0000] {spark_submit.py:488} INFO - 24/10/03 07:22:08 INFO ShutdownHookManager: Deleting directory /tmp/spark-d7c6effb-b34c-42e0-b6ae-076bbfdb6960
+[2024-10-03T07:22:08.514+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-03T07:22:08.514+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=etl_pipeline, task_id=warehouse.step_1.extract_transform.categories, run_id=scheduled__2024-10-02T00:00:00+00:00, execution_date=20241002T000000, start_date=20241003T072153, end_date=20241003T072208
+[2024-10-03T07:22:08.568+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-03T07:22:08.595+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-03T07:22:08.597+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

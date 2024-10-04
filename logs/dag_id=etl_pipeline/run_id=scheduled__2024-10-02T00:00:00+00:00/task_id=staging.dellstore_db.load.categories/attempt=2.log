@@ -1,0 +1,20 @@
+[2024-10-03T07:49:20.388+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-03T07:49:20.429+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.staging.dellstore_db.load.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T07:49:20.447+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.staging.dellstore_db.load.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T07:49:20.448+0000] {taskinstance.py:2865} INFO - Starting attempt 2 of 1
+[2024-10-03T07:49:20.470+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): staging.dellstore_db.load.categories> on 2024-10-02 00:00:00+00:00
+[2024-10-03T07:49:20.489+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=33788) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-10-03T07:49:20.493+0000] {standard_task_runner.py:72} INFO - Started process 33790 to run task
+[2024-10-03T07:49:20.490+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'staging.dellstore_db.load.categories', 'scheduled__2024-10-02T00:00:00+00:00', '--job-id', '13584', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpd8138soj']
+[2024-10-03T07:49:20.497+0000] {standard_task_runner.py:105} INFO - Job 13584: Subtask staging.dellstore_db.load.categories
+[2024-10-03T07:49:20.605+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.staging.dellstore_db.load.categories scheduled__2024-10-02T00:00:00+00:00 [running]> on host 8c0d519f07a3
+[2024-10-03T07:49:20.847+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='staging.dellstore_db.load.categories' AIRFLOW_CTX_EXECUTION_DATE='2024-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-02T00:00:00+00:00'
+[2024-10-03T07:49:20.850+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-03T07:49:20.887+0000] {base.py:84} INFO - Retrieving connection 'staging_db'
+[2024-10-03T07:49:20.915+0000] {base.py:84} INFO - Retrieving connection 'minio'
+[2024-10-03T07:49:20.970+0000] {taskinstance.py:301} INFO - categories doesn't have new data. Skipped...
+[2024-10-03T07:49:21.007+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-03T07:49:21.009+0000] {taskinstance.py:352} INFO - Marking task as SKIPPED. dag_id=etl_pipeline, task_id=staging.dellstore_db.load.categories, run_id=scheduled__2024-10-02T00:00:00+00:00, execution_date=20241002T000000, start_date=20241003T074920, end_date=20241003T074921
+[2024-10-03T07:49:21.075+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-10-03T07:49:21.152+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-10-03T07:49:21.156+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

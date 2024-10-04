@@ -1,0 +1,227 @@
+[2024-10-02T16:38:45.105+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:38:45.107+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:38:45.112+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:38:45.111+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:38:46.224+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:38:46.256+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.167 seconds
+[2024-10-02T16:39:49.220+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:39:49.224+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:39:49.240+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:39:49.239+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:39:52.481+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:39:52.574+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 3.372 seconds
+[2024-10-02T16:40:23.068+0000] {processor.py:186} INFO - Started process (PID=273) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:23.074+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:40:23.091+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:40:23.090+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:24.949+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:24.991+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.951 seconds
+[2024-10-02T16:40:55.702+0000] {processor.py:186} INFO - Started process (PID=352) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:55.705+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:40:55.710+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:40:55.709+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:57.343+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:40:57.414+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.727 seconds
+[2024-10-02T16:41:27.691+0000] {processor.py:186} INFO - Started process (PID=421) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:41:27.694+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:41:27.707+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:41:27.706+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:41:29.080+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:41:29.126+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.451 seconds
+[2024-10-02T16:41:59.440+0000] {processor.py:186} INFO - Started process (PID=487) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:41:59.444+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:41:59.450+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:41:59.449+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:42:01.476+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:42:01.539+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.117 seconds
+[2024-10-02T16:42:32.569+0000] {processor.py:186} INFO - Started process (PID=556) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:42:32.583+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:42:32.593+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:42:32.591+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:42:34.132+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:42:34.174+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.642 seconds
+[2024-10-02T16:43:04.328+0000] {processor.py:186} INFO - Started process (PID=628) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:04.330+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:43:04.335+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:43:04.334+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:05.633+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:05.688+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.375 seconds
+[2024-10-02T16:43:36.282+0000] {processor.py:186} INFO - Started process (PID=699) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:36.284+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:43:36.290+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:43:36.289+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:37.929+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:43:37.974+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.710 seconds
+[2024-10-02T16:44:09.376+0000] {processor.py:186} INFO - Started process (PID=771) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:09.403+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:44:09.454+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:44:09.448+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:13.574+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:13.836+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 4.581 seconds
+[2024-10-02T16:44:44.016+0000] {processor.py:186} INFO - Started process (PID=847) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:44.019+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:44:44.025+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:44:44.024+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:45.497+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:44:45.543+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.547 seconds
+[2024-10-02T16:45:15.691+0000] {processor.py:186} INFO - Started process (PID=916) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:15.705+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:45:15.712+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:45:15.710+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:17.365+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:17.408+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.769 seconds
+[2024-10-02T16:45:47.845+0000] {processor.py:186} INFO - Started process (PID=985) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:47.847+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:45:47.854+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:45:47.852+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:49.300+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:45:49.372+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.547 seconds
+[2024-10-02T16:46:19.787+0000] {processor.py:186} INFO - Started process (PID=1054) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:19.789+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:46:19.794+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:46:19.794+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:21.204+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:21.248+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.480 seconds
+[2024-10-02T16:46:51.516+0000] {processor.py:186} INFO - Started process (PID=1123) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:51.519+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:46:51.527+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:46:51.526+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:53.406+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:46:53.453+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.961 seconds
+[2024-10-02T16:47:24.031+0000] {processor.py:186} INFO - Started process (PID=1192) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:24.045+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:47:24.052+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:47:24.051+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:26.176+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:26.237+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.227 seconds
+[2024-10-02T16:47:56.533+0000] {processor.py:186} INFO - Started process (PID=1261) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:56.537+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:47:56.549+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:47:56.548+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:58.714+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:47:58.779+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.273 seconds
+[2024-10-02T16:48:29.581+0000] {processor.py:186} INFO - Started process (PID=1330) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:48:29.595+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:48:29.601+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:48:29.600+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:48:32.142+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:48:32.192+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.632 seconds
+[2024-10-02T16:49:02.975+0000] {processor.py:186} INFO - Started process (PID=1403) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:02.989+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:49:02.996+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:49:02.995+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:05.257+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:05.316+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.366 seconds
+[2024-10-02T16:49:35.818+0000] {processor.py:186} INFO - Started process (PID=1474) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:35.821+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:49:35.832+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:49:35.829+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:38.105+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:49:38.157+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.364 seconds
+[2024-10-02T16:50:10.152+0000] {processor.py:186} INFO - Started process (PID=1549) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:10.159+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:50:10.172+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:50:10.171+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:13.969+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:14.054+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 3.942 seconds
+[2024-10-02T16:50:44.705+0000] {processor.py:186} INFO - Started process (PID=1618) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:44.710+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:50:44.716+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:50:44.715+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:46.629+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:50:46.675+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.996 seconds
+[2024-10-02T16:51:16.852+0000] {processor.py:186} INFO - Started process (PID=1690) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:16.855+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:51:16.861+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:51:16.860+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:18.584+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:18.624+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.796 seconds
+[2024-10-02T16:51:49.006+0000] {processor.py:186} INFO - Started process (PID=1759) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:49.019+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:51:49.033+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:51:49.025+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:51.654+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:51:51.725+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.753 seconds
+[2024-10-02T16:52:22.158+0000] {processor.py:186} INFO - Started process (PID=1829) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:22.161+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:52:22.174+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:52:22.171+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:24.255+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:24.317+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.187 seconds
+[2024-10-02T16:52:54.798+0000] {processor.py:186} INFO - Started process (PID=1903) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:54.802+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:52:54.817+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:52:54.816+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:57.117+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:52:57.173+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.407 seconds
+[2024-10-02T16:53:28.082+0000] {processor.py:186} INFO - Started process (PID=1974) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:53:28.095+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:53:28.103+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:53:28.101+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:53:30.180+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:53:30.246+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.192 seconds
+[2024-10-02T16:54:00.738+0000] {processor.py:186} INFO - Started process (PID=2043) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:00.757+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:54:00.764+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:54:00.763+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:02.979+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:03.037+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.327 seconds
+[2024-10-02T16:54:33.243+0000] {processor.py:186} INFO - Started process (PID=2117) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:33.257+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:54:33.263+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:54:33.262+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:35.298+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:54:35.347+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 2.122 seconds
+[2024-10-02T16:55:05.537+0000] {processor.py:186} INFO - Started process (PID=2191) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:05.539+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:55:05.553+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:55:05.552+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:07.062+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:07.104+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.592 seconds
+[2024-10-02T16:55:37.607+0000] {processor.py:186} INFO - Started process (PID=2258) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:37.611+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:55:37.618+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:55:37.617+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:39.473+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:39.514+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.925 seconds
+[2024-10-02T16:55:40.623+0000] {processor.py:186} INFO - Started process (PID=2266) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:40.626+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:55:40.637+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:55:40.636+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:57.212+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:55:57.287+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 16.685 seconds
+[2024-10-02T16:56:27.893+0000] {processor.py:186} INFO - Started process (PID=2637) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:56:27.896+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:56:27.903+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:56:27.901+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:56:44.438+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:56:44.546+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 16.673 seconds
+[2024-10-02T16:57:14.906+0000] {processor.py:186} INFO - Started process (PID=3038) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:57:14.909+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:57:14.917+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:57:14.916+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:57:29.543+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:57:29.591+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 14.705 seconds
+[2024-10-02T16:58:00.892+0000] {processor.py:186} INFO - Started process (PID=3370) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:58:00.895+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:58:00.904+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:58:00.903+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:58:16.236+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:58:16.288+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 15.424 seconds
+[2024-10-02T16:58:47.057+0000] {processor.py:186} INFO - Started process (PID=3764) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:58:47.060+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:58:47.076+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:58:47.075+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:59:07.545+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:59:07.622+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 20.606 seconds
+[2024-10-02T16:59:39.625+0000] {processor.py:186} INFO - Started process (PID=4157) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T16:59:39.630+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T16:59:39.637+0000] {logging_mixin.py:190} INFO - [2024-10-02T16:59:39.636+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:00.961+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:01.062+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 21.468 seconds
+[2024-10-02T17:00:31.477+0000] {processor.py:186} INFO - Started process (PID=4602) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:31.485+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:00:31.493+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:00:31.492+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:31.503+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:00:31.502+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:00:31.504+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:31.592+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.145 seconds
+[2024-10-02T17:00:32.495+0000] {processor.py:186} INFO - Started process (PID=4607) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:32.498+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:00:32.504+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:00:32.503+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:32.509+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:00:32.508+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:00:32.511+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:00:32.556+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.080 seconds
+[2024-10-02T17:01:11.302+0000] {processor.py:186} INFO - Started process (PID=4727) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:01:11.323+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:01:11.363+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:01:11.346+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:01:11.402+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:01:11.401+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:01:11.403+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:01:11.728+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.563 seconds
+[2024-10-02T17:02:26.428+0000] {processor.py:186} INFO - Started process (PID=5899) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:02:26.459+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:02:26.498+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:02:26.463+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:02:26.575+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:02:26.534+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:02:26.578+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:02:27.482+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 1.111 seconds
+[2024-10-02T17:03:10.652+0000] {processor.py:186} INFO - Started process (PID=6406) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:10.674+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:03:10.707+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:03:10.702+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:10.763+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:03:10.711+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:03:10.764+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:11.056+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.644 seconds
+[2024-10-02T17:03:41.762+0000] {processor.py:186} INFO - Started process (PID=6650) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:41.764+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:03:41.772+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:03:41.770+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:41.780+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:03:41.779+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:03:41.780+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:03:41.842+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.109 seconds
+[2024-10-02T17:04:12.290+0000] {processor.py:186} INFO - Started process (PID=6798) to work on /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:04:12.292+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py for tasks to queue
+[2024-10-02T17:04:12.295+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:04:12.295+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:04:12.299+0000] {logging_mixin.py:190} INFO - [2024-10-02T17:04:12.299+0000] {dagbag.py:366} INFO - File /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py assumed to contain no DAGs. Skipping.
+[2024-10-02T17:04:12.301+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py
+[2024-10-02T17:04:12.364+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py took 0.094 seconds

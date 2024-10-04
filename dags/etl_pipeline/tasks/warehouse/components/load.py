@@ -1,10 +1,9 @@
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.exceptions import AirflowSkipException
 
-import pandas as pd
 from helper.minio import CustomMinio
-from sqlalchemy import create_engine
-from pangres import upsert
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col
 from datetime import timedelta
 
 class Load:
@@ -16,20 +15,24 @@ class Load:
                 object_name = f'{table_name}.csv'
 
             bucket_name = 'valid-data'
-            df = CustomMinio._get_dataframe(bucket_name, object_name)
+            df = CustomMinio._get_spark_dataframe(bucket_name, object_name)
 
-            df = df.set_index(table_pkey)
+            df = df.withColumnRenamed(table_pkey, 'id')
 
-            engine = create_engine(PostgresHook(postgres_conn_id = 'warehouse_db').get_uri())
+            pg_hook = PostgresHook(postgres_conn_id='warehouse_db')
+            connection = pg_hook.get_conn()
+            cursor = connection.cursor()
 
-            upsert(
-                con = engine,
-                df = df,
-                table_name = table_name,
-                schema = 'public',
-                if_row_exists = 'update'
-            )
+            for row in df.collect():
+                cursor.execute(f"""
+                    INSERT INTO public.{table_name} ({', '.join(df.columns)})
+                    VALUES ({', '.join(['%s'] * len(df.columns))})
+                    ON CONFLICT (id) DO UPDATE SET
+                    {', '.join([f"{col} = EXCLUDED.{col}" for col in df.columns if col != 'id'])}
+                """, tuple(row))
 
-            engine.dispose()
+            connection.commit()
+            cursor.close()
+            connection.close()
         except:
             raise AirflowSkipException(f"{table_name} doesn't have new data. Skipped...")

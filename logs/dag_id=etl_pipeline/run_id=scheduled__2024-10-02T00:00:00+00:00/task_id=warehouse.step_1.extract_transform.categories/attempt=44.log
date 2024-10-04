@@ -1,0 +1,226 @@
+[2024-10-03T08:22:44.821+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-10-03T08:22:44.850+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T08:22:44.863+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [queued]>
+[2024-10-03T08:22:44.864+0000] {taskinstance.py:2865} INFO - Starting attempt 44 of 44
+[2024-10-03T08:22:44.881+0000] {taskinstance.py:2888} INFO - Executing <Task(SparkSubmitOperator): warehouse.step_1.extract_transform.categories> on 2024-10-02 00:00:00+00:00
+[2024-10-03T08:22:44.892+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=38520) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-10-03T08:22:44.894+0000] {standard_task_runner.py:72} INFO - Started process 38522 to run task
+[2024-10-03T08:22:44.892+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_pipeline', 'warehouse.step_1.extract_transform.categories', 'scheduled__2024-10-02T00:00:00+00:00', '--job-id', '13605', '--raw', '--subdir', 'DAGS_FOLDER/etl_pipeline/run.py', '--cfg-path', '/tmp/tmpu6vs4tdb']
+[2024-10-03T08:22:44.895+0000] {standard_task_runner.py:105} INFO - Job 13605: Subtask warehouse.step_1.extract_transform.categories
+[2024-10-03T08:22:44.982+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_pipeline.warehouse.step_1.extract_transform.categories scheduled__2024-10-02T00:00:00+00:00 [running]> on host 8c0d519f07a3
+[2024-10-03T08:22:45.116+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_pipeline' AIRFLOW_CTX_TASK_ID='warehouse.step_1.extract_transform.categories' AIRFLOW_CTX_EXECUTION_DATE='2024-10-02T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='44' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-02T00:00:00+00:00'
+[2024-10-03T08:22:45.118+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-10-03T08:22:45.140+0000] {base.py:84} INFO - Retrieving connection 'spark-conn'
+[2024-10-03T08:22:45.142+0000] {spark_submit.py:335} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --name arrow-spark dags/etl_pipeline/tasks/warehouse/components/extract_transform.py categories False 2024-10-02
+[2024-10-03T08:22:45.207+0000] {spark_submit.py:488} INFO - /home/***/.local/lib/python3.12/site-packages/pyspark/bin/load-spark-env.sh: line 68: ps: command not found
+[2024-10-03T08:22:54.324+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SparkContext: Running Spark version 3.5.3
+[2024-10-03T08:22:54.328+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SparkContext: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+[2024-10-03T08:22:54.329+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SparkContext: Java version 17.0.12
+[2024-10-03T08:22:54.410+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-10-03T08:22:54.585+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceUtils: ==============================================================
+[2024-10-03T08:22:54.586+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-10-03T08:22:54.587+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceUtils: ==============================================================
+[2024-10-03T08:22:54.588+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SparkContext: Submitted application: Extract Transform - categories
+[2024-10-03T08:22:54.633+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-10-03T08:22:54.648+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceProfile: Limiting resource is cpu
+[2024-10-03T08:22:54.650+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-10-03T08:22:54.754+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SecurityManager: Changing view acls to: ***
+[2024-10-03T08:22:54.756+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SecurityManager: Changing modify acls to: ***
+[2024-10-03T08:22:54.757+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SecurityManager: Changing view acls groups to:
+[2024-10-03T08:22:54.759+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SecurityManager: Changing modify acls groups to:
+[2024-10-03T08:22:54.761+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:54 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-10-03T08:22:55.222+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO Utils: Successfully started service 'sparkDriver' on port 34449.
+[2024-10-03T08:22:55.269+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO SparkEnv: Registering MapOutputTracker
+[2024-10-03T08:22:55.349+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO SparkEnv: Registering BlockManagerMaster
+[2024-10-03T08:22:55.399+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-10-03T08:22:55.401+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-10-03T08:22:55.409+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-10-03T08:22:55.473+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-0d5e6580-8e1a-448d-be09-309b68d46cf7
+[2024-10-03T08:22:55.499+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-10-03T08:22:55.531+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-10-03T08:22:55.778+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-10-03T08:22:55.921+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:55 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-10-03T08:22:56.205+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2024-10-03T08:22:56.299+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO TransportClientFactory: Successfully created connection to spark-master/172.20.0.2:7077 after 50 ms (0 ms spent in bootstraps)
+[2024-10-03T08:22:56.440+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20241003082256-0039
+[2024-10-03T08:22:56.448+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20241003082256-0039/0 on worker-20241003061731-172.20.0.9-38803 (172.20.0.9:38803) with 2 core(s)
+[2024-10-03T08:22:56.454+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneSchedulerBackend: Granted executor ID app-20241003082256-0039/0 on hostPort 172.20.0.9:38803 with 2 core(s), 1024.0 MiB RAM
+[2024-10-03T08:22:56.460+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37583.
+[2024-10-03T08:22:56.460+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO NettyBlockTransferService: Server created on 8c0d519f07a3:37583
+[2024-10-03T08:22:56.464+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-10-03T08:22:56.473+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 8c0d519f07a3, 37583, None)
+[2024-10-03T08:22:56.479+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO BlockManagerMasterEndpoint: Registering block manager 8c0d519f07a3:37583 with 434.4 MiB RAM, BlockManagerId(driver, 8c0d519f07a3, 37583, None)
+[2024-10-03T08:22:56.484+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 8c0d519f07a3, 37583, None)
+[2024-10-03T08:22:56.487+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 8c0d519f07a3, 37583, None)
+[2024-10-03T08:22:56.517+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20241003082256-0039/0 is now RUNNING
+[2024-10-03T08:22:56.994+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:56 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2024-10-03T08:22:58.627+0000] {spark_submit.py:488} INFO - [2024-10-03T08:22:58.622+0000] {base.py:84} INFO - Retrieving connection 'staging_db'
+[2024-10-03T08:22:58.773+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:58 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-10-03T08:22:58.792+0000] {spark_submit.py:488} INFO - 24/10/03 08:22:58 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2024-10-03T08:23:02.130+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:02 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Registered executor NettyRpcEndpointRef(spark-client://Executor) (172.20.0.9:35766) with ID 0,  ResourceProfileId 0
+[2024-10-03T08:23:02.387+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:02 INFO BlockManagerMasterEndpoint: Registering block manager 172.20.0.9:35207 with 434.4 MiB RAM, BlockManagerId(0, 172.20.0.9, 35207, None)
+[2024-10-03T08:23:04.495+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO CodeGenerator: Code generated in 359.571008 ms
+[2024-10-03T08:23:04.652+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Registering RDD 7 (csv at NativeMethodAccessorImpl.java:0) as input to shuffle 0
+[2024-10-03T08:23:04.658+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Got map stage job 0 (csv at NativeMethodAccessorImpl.java:0) with 2 output partitions
+[2024-10-03T08:23:04.658+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Final stage: ShuffleMapStage 0 (csv at NativeMethodAccessorImpl.java:0)
+[2024-10-03T08:23:04.659+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Parents of final stage: List()
+[2024-10-03T08:23:04.661+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Missing parents: List()
+[2024-10-03T08:23:04.665+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[7] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-10-03T08:23:04.782+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 29.2 KiB, free 434.4 MiB)
+[2024-10-03T08:23:04.835+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 14.1 KiB, free 434.4 MiB)
+[2024-10-03T08:23:04.839+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 8c0d519f07a3:37583 (size: 14.1 KiB, free: 434.4 MiB)
+[2024-10-03T08:23:04.847+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1585
+[2024-10-03T08:23:04.868+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO DAGScheduler: Submitting 2 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[7] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0, 1))
+[2024-10-03T08:23:04.869+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO TaskSchedulerImpl: Adding task set 0.0 with 2 tasks resource profile 0
+[2024-10-03T08:23:04.903+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.20.0.9, executor 0, partition 0, PROCESS_LOCAL, 9185 bytes)
+[2024-10-03T08:23:04.909+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:04 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1) (172.20.0.9, executor 0, partition 1, PROCESS_LOCAL, 9170 bytes)
+[2024-10-03T08:23:05.383+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:05 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.20.0.9:35207 (size: 14.1 KiB, free: 434.4 MiB)
+[2024-10-03T08:23:08.794+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 3902 ms on 172.20.0.9 (executor 0) (1/2)
+[2024-10-03T08:23:08.796+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 3887 ms on 172.20.0.9 (executor 0) (2/2)
+[2024-10-03T08:23:08.797+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+[2024-10-03T08:23:08.804+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO PythonAccumulatorV2: Connected to AccumulatorServer at host: 127.0.0.1 port: 36421
+[2024-10-03T08:23:08.817+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO DAGScheduler: ShuffleMapStage 0 (csv at NativeMethodAccessorImpl.java:0) finished in 4.137 s
+[2024-10-03T08:23:08.818+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO DAGScheduler: looking for newly runnable stages
+[2024-10-03T08:23:08.820+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO DAGScheduler: running: Set()
+[2024-10-03T08:23:08.821+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO DAGScheduler: waiting: Set()
+[2024-10-03T08:23:08.823+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO DAGScheduler: failed: Set()
+[2024-10-03T08:23:08.873+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:08 INFO ShufflePartitionsUtil: For shuffle(0), advisory target size: 67108864, actual target size 1048576, minimum partition size: 1048576
+[2024-10-03T08:23:09.020+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO FileOutputCommitter: File Output Committer Algorithm version is 1
+[2024-10-03T08:23:09.020+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO FileOutputCommitter: FileOutputCommitter skip cleanup _temporary folders under output directory:false, ignore cleanup failures: false
+[2024-10-03T08:23:09.023+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO SQLHadoopMapReduceCommitProtocol: Using output committer class org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+[2024-10-03T08:23:09.084+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO CodeGenerator: Code generated in 25.2336 ms
+[2024-10-03T08:23:09.132+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO SparkContext: Starting job: csv at NativeMethodAccessorImpl.java:0
+[2024-10-03T08:23:09.141+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Got job 1 (csv at NativeMethodAccessorImpl.java:0) with 1 output partitions
+[2024-10-03T08:23:09.142+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Final stage: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0)
+[2024-10-03T08:23:09.143+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 1)
+[2024-10-03T08:23:09.145+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Missing parents: List()
+[2024-10-03T08:23:09.147+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Submitting ResultStage 2 (MapPartitionsRDD[11] at csv at NativeMethodAccessorImpl.java:0), which has no missing parents
+[2024-10-03T08:23:09.246+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 236.4 KiB, free 434.1 MiB)
+[2024-10-03T08:23:09.260+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 88.1 KiB, free 434.0 MiB)
+[2024-10-03T08:23:09.262+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 8c0d519f07a3:37583 (size: 88.1 KiB, free: 434.3 MiB)
+[2024-10-03T08:23:09.264+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1585
+[2024-10-03T08:23:09.267+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 2 (MapPartitionsRDD[11] at csv at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+[2024-10-03T08:23:09.267+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO TaskSchedulerImpl: Adding task set 2.0 with 1 tasks resource profile 0
+[2024-10-03T08:23:09.280+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO TaskSetManager: Starting task 0.0 in stage 2.0 (TID 2) (172.20.0.9, executor 0, partition 0, NODE_LOCAL, 9003 bytes)
+[2024-10-03T08:23:09.302+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 8c0d519f07a3:37583 in memory (size: 14.1 KiB, free: 434.3 MiB)
+[2024-10-03T08:23:09.313+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.20.0.9:35207 in memory (size: 14.1 KiB, free: 434.4 MiB)
+[2024-10-03T08:23:09.337+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.20.0.9:35207 (size: 88.1 KiB, free: 434.3 MiB)
+[2024-10-03T08:23:09.611+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:09 INFO MapOutputTrackerMasterEndpoint: Asked to send map output locations for shuffle 0 to 172.20.0.9:35766
+[2024-10-03T08:23:10.339+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO TaskSetManager: Finished task 0.0 in stage 2.0 (TID 2) in 1064 ms on 172.20.0.9 (executor 0) (1/1)
+[2024-10-03T08:23:10.341+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO TaskSchedulerImpl: Removed TaskSet 2.0, whose tasks have all completed, from pool
+[2024-10-03T08:23:10.343+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO DAGScheduler: ResultStage 2 (csv at NativeMethodAccessorImpl.java:0) finished in 1.172 s
+[2024-10-03T08:23:10.346+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO DAGScheduler: Job 1 is finished. Cancelling potential speculative or zombie tasks for this job
+[2024-10-03T08:23:10.347+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO TaskSchedulerImpl: Killing all running tasks in stage 2: Stage finished
+[2024-10-03T08:23:10.351+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO DAGScheduler: Job 1 finished: csv at NativeMethodAccessorImpl.java:0, took 1.217562 s
+[2024-10-03T08:23:10.358+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO FileFormatWriter: Start to commit write Job 18aa4b8e-c679-45d5-8608-f689d4ef0cc4.
+[2024-10-03T08:23:10.391+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO FileFormatWriter: Write Job 18aa4b8e-c679-45d5-8608-f689d4ef0cc4 committed. Elapsed time: 31 ms.
+[2024-10-03T08:23:10.398+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:10 INFO FileFormatWriter: Finished processing stats for write job 18aa4b8e-c679-45d5-8608-f689d4ef0cc4.
+[2024-10-03T08:23:10.406+0000] {spark_submit.py:488} INFO - Traceback (most recent call last):
+[2024-10-03T08:23:10.407+0000] {spark_submit.py:488} INFO - File "/opt/***/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py", line 47, in _categories
+[2024-10-03T08:23:10.408+0000] {spark_submit.py:488} INFO - with open(f"{temp_path}/part-00000", 'rb') as f:
+[2024-10-03T08:23:10.409+0000] {spark_submit.py:488} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-10-03T08:23:10.409+0000] {spark_submit.py:488} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmp5sau2kqa/part-00000'
+[2024-10-03T08:23:10.410+0000] {spark_submit.py:488} INFO - 
+[2024-10-03T08:23:10.410+0000] {spark_submit.py:488} INFO - During handling of the above exception, another exception occurred:
+[2024-10-03T08:23:10.411+0000] {spark_submit.py:488} INFO - 
+[2024-10-03T08:23:10.412+0000] {spark_submit.py:488} INFO - Traceback (most recent call last):
+[2024-10-03T08:23:10.412+0000] {spark_submit.py:488} INFO - File "/opt/***/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py", line 68, in <module>
+[2024-10-03T08:23:10.413+0000] {spark_submit.py:488} INFO - ExtractTransform._categories(incremental, date)
+[2024-10-03T08:23:10.413+0000] {spark_submit.py:488} INFO - File "/opt/***/dags/etl_pipeline/tasks/warehouse/components/extract_transform.py", line 56, in _categories
+[2024-10-03T08:23:10.414+0000] {spark_submit.py:488} INFO - raise AirflowException(f"Error when extracting and transforming data from categories: {e}")
+[2024-10-03T08:23:10.415+0000] {spark_submit.py:488} INFO - ***.exceptions.AirflowException: Error when extracting and transforming data from categories: [Errno 2] No such file or directory: '/tmp/tmp5sau2kqa/part-00000'
+[2024-10-03T08:23:10.415+0000] {spark_submit.py:488} INFO - [2024-10-03T08:23:10.409+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2024-10-03T08:23:11.036+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-10-03T08:23:11.037+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-10-03T08:23:11.050+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO SparkUI: Stopped Spark web UI at http://8c0d519f07a3:4040
+[2024-10-03T08:23:11.054+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2024-10-03T08:23:11.056+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2024-10-03T08:23:11.081+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-10-03T08:23:11.123+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO MemoryStore: MemoryStore cleared
+[2024-10-03T08:23:11.124+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO BlockManager: BlockManager stopped
+[2024-10-03T08:23:11.129+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-10-03T08:23:11.132+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-10-03T08:23:11.148+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO SparkContext: Successfully stopped SparkContext
+[2024-10-03T08:23:11.149+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO ShutdownHookManager: Shutdown hook called
+[2024-10-03T08:23:11.150+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-c6dbf5c0-2e8c-4050-abdd-76ed2d65bf2a/pyspark-c9e97289-e293-49a1-9bd3-5adce4755e9a
+[2024-10-03T08:23:11.154+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-57860c9e-7b0e-45ab-a272-e60f2a781186
+[2024-10-03T08:23:11.158+0000] {spark_submit.py:488} INFO - 24/10/03 08:23:11 INFO ShutdownHookManager: Deleting directory /tmp/spark-c6dbf5c0-2e8c-4050-abdd-76ed2d65bf2a
+[2024-10-03T08:23:11.224+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 419, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark dags/etl_pipeline/tasks/warehouse/components/extract_transform.py categories False 2024-10-02. Error code is: 1.
+[2024-10-03T08:23:11.229+0000] {taskinstance.py:1225} INFO - Marking task as FAILED. dag_id=etl_pipeline, task_id=warehouse.step_1.extract_transform.categories, run_id=scheduled__2024-10-02T00:00:00+00:00, execution_date=20241002T000000, start_date=20241003T082244, end_date=20241003T082311
+[2024-10-03T08:23:11.230+0000] {taskinstance.py:1563} INFO - Executing callback at index 0: slack_notifier
+[2024-10-03T08:23:11.232+0000] {baseoperator.py:405} WARNING - SlackWebhookOperator.execute cannot be called outside TaskInstance!
+[2024-10-03T08:23:11.235+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/providers/slack/hooks/slack_webhook.py:42 UserWarning: You cannot override the default channel (chosen by the user who installed your app), username, or icon when you're using Incoming Webhooks to post messages. Instead, these values will always inherit from the associated Slack app configuration. See: https://api.slack.com/messaging/webhooks#advanced_message_formatting. It is possible to change this values only in Legacy Slack Integration Incoming Webhook: https://api.slack.com/legacy/custom-integrations/messaging/webhooks#legacy-customizations
+[2024-10-03T08:23:11.243+0000] {base.py:84} INFO - Retrieving connection 'slack_notifier'
+[2024-10-03T08:23:12.729+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-10-03T08:23:12.730+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 13605 for task warehouse.step_1.extract_transform.categories (Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark dags/etl_pipeline/tasks/warehouse/components/extract_transform.py categories False 2024-10-02. Error code is: 1.; 38522)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 419, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --name arrow-spark dags/etl_pipeline/tasks/warehouse/components/extract_transform.py categories False 2024-10-02. Error code is: 1.
+[2024-10-03T08:23:12.775+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-10-03T08:23:12.814+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-03T08:23:12.817+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
