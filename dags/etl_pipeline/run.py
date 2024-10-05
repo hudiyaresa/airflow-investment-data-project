@@ -22,6 +22,6 @@ default_args = {
 def etl_pipeline():
     incremental_mode = eval(Variable.get('etl_pipeline_incremental_mode'))
 
-    staging(incremental=incremental_mode) >> warehouse(incremental=incremental_mode)
+    staging(incremental=incremental_mode) 
 
 etl_pipeline()

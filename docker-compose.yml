@@ -128,14 +128,46 @@ services:
     networks:
       - airflow-networks
 
-  spark-worker:
+  spark-worker-1:
     build: 
       context: ./spark
       dockerfile: Dockerfile
+    container_name: spark-worker-1
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
       - spark-master
-    container_name: spark-worker
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
+      SPARK_MASTER_URL: spark://spark-master:7077
+    networks:
+      - airflow-networks
+
+  spark-worker-2:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    container_name: spark-worker-2
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_MODE: worker
+      SPARK_WORKER_CORES: 2
+      SPARK_WORKER_MEMORY: 2g
+      SPARK_MASTER_URL: spark://spark-master:7077
+    networks:
+      - airflow-networks
+
+  spark-worker-3:
+    build: 
+      context: ./spark
+      dockerfile: Dockerfile
+    container_name: spark-worker-3
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    depends_on:
+      - spark-master
     environment:
       SPARK_MODE: worker
       SPARK_WORKER_CORES: 2

@@ -10,7 +10,6 @@ from airflow.operators.python import PythonOperator
 # from etl_pipeline.tasks.warehouse.components.validations import Validation, ValidationType
 # from etl_pipeline.tasks.warehouse.components.load import Load
 
-BASE_PATH = 'dags'
 DATE = '{{ ds }}'
 
 @task_group
@@ -19,17 +18,35 @@ def warehouse(incremental):
     def step_1():
         @task_group
         def extract_transform():
-            SparkSubmitOperator(
-                task_id='categories',
-                application=f'dags/etl_pipeline/tasks/warehouse/components/extract_transform.py',
-                trigger_rule='none_failed',
-                application_args=[
-                    'categories',
-                    f'{incremental}',
-                    DATE
-                ],
-                conn_id='spark-conn',
-                jars='/opt/spark/jars/hadoop-aws-3.3.1.jar,/opt/spark/jars/aws-java-sdk-bundle-1.11.900.jar'
-            )
+            jar_list = [
+                '/opt/spark/jars/hadoop-aws-3.3.1.jar',
+                '/opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar',
+                '/opt/spark/jars/postgresql-42.2.23.jar'
+            ]
+
+            spark_conf = {
+                'spark.hadoop.fs.s3a.access.key': 'minio',
+                'spark.hadoop.fs.s3a.secret.key': 'minio123',
+                'spark.hadoop.fs.s3a.endpoint': 'http://minio:9000',
+                'spark.hadoop.fs.s3a.path.style.access': 'true',
+                'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem'
+            }
+
+
+            tables = ['categories', 'customers', 'products', 'inventory', 'orders', 'orderlines', 'cust_hist', 'order_status_analytic', 'orderlines_history']
+            for table in tables:
+                SparkSubmitOperator(
+                    task_id=f'{table}',
+                    conn_id='spark-conn',
+                    application=f'dags/etl_pipeline/tasks/warehouse/components/extract_transform.py',
+                    application_args=[
+                        f'{table}',
+                        f'{incremental}',
+                        DATE
+                    ],
+                    conf=spark_conf,
+                    jars=','.join(jar_list),
+                    trigger_rule='none_failed',
+                )
         extract_transform()
     step_1()
