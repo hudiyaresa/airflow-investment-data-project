@@ -16,9 +16,6 @@ services:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
-      - ./include:/opt/airflow/include
-      - ./jobs:/opt/airflow/jobs
-      - ./logs:/opt/airflow/logs
     networks:
       - airflow-networks
 
@@ -32,7 +29,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - airflow_metadata_5:/var/lib/postgresql/data
+      - airflow_metadata:/var/lib/postgresql/data
     networks:
       - airflow-networks
 
@@ -177,9 +174,9 @@ services:
       - airflow-networks
 
 volumes:
-  airflow_metadata_5:
+  airflow_metadata:
     driver: local
-    name: airflow_metadata_5
+    name: airflow_metadata
 
   dellstore_data:
     driver: local
