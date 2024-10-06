@@ -32,7 +32,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - airflow_metadata:/var/lib/postgresql/data
+      - airflow_metadata_5:/var/lib/postgresql/data
     networks:
       - airflow-networks
 
@@ -177,9 +177,9 @@ services:
       - airflow-networks
 
 volumes:
-  airflow_metadata:
+  airflow_metadata_5:
     driver: local
-    name: airflow_metadata
+    name: airflow_metadata_5
 
   dellstore_data:
     driver: local
