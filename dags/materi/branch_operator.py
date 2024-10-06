@@ -1,60 +1,40 @@
 from datetime import datetime
-from airflow import DAG
-from airflow.operators.dummy import DummyOperator
-from airflow.operators.python import BranchPythonOperator
-from airflow.operators.python import PythonOperator
+from airflow.decorators import dag, task, task_group
 
-def choose_branch(**kwargs):
-    if 2 % 2 == 0:
-        return 'even_branch'
-    else:
-        return 'odd_branch'
-
-def print_even():
-    print("This is an even second.")
-
-def print_odd():
-    print("This is an odd second.")
-
-default_args = {
-    'owner': 'airflow',
-    'depends_on_past': False,
-    'start_date': datetime(2023, 1, 1),
-    'retries': 1,
-}
-
-with DAG(
-    'branch_python_operator_example',
-    default_args=default_args,
-    description='A simple branch python operator example',
-    schedule_interval='@daily',
+@dag(
+    dag_id='etl_branch',
+    start_date=datetime(2024, 9, 1),
+    schedule='@daily',
     catchup=False,
-) as dag:
+)
 
-    start = DummyOperator(
-        task_id='start'
-    )
+def etl_branch():
+    @task.branch
+    def check_availability():
+        is_available = True
+        if is_available:
+            return 'process_data'
+        else:
+            return 'send_alert'
 
-    branching = BranchPythonOperator(
-        task_id='branching',
-        python_callable=choose_branch,
-    )
+    @task_group
+    def process_data():
+        @task
+        def extract():
+            print("Extract data")
+        @task
+        def transform():
+            print("Transform data")
+        @task
+        def load():
+            print("Load data")
 
-    even_branch = PythonOperator(
-        task_id='even_branch',
-        python_callable=print_even
-    )
+        extract() >> transform() >> load()
 
-    odd_branch = PythonOperator(
-        task_id='odd_branch',
-        python_callable=print_odd
-    )
+    @task    
+    def send_alert():
+        print(f"Send alert")
 
-    end = DummyOperator(
-        task_id='end',
-        trigger_rule='none_failed_or_skipped'
-    )
+    check_availability() >> [process_data(), send_alert()]
 
-    start >> branching
-    branching >> even_branch >> end
-    branching >> odd_branch >> end
+etl_branch()
