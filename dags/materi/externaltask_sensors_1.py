@@ -2,6 +2,7 @@ from airflow.decorators import dag, task
 from airflow.operators.dummy import DummyOperator
 from datetime import datetime
 from time import sleep
+
 # Define the DAG
 @dag(
     start_date=datetime(2023, 10, 1), 

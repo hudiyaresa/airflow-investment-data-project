@@ -12,9 +12,9 @@ from datetime import datetime
 def process_data_2():
     wait_for_extract = ExternalTaskSensor(
         task_id='wait_for_extract',
-        external_dag_id='process_data_1',
-        external_task_id='extract_data',
-        poll_interval=5
+        external_dag_id='process_data_1', # DAG IDs that this sensor is waiting for.
+        external_task_id='extract_data', # Task IDs that this sensor is waiting for.
+        poll_interval=5 # Pooling periods (seconds) to check the status.
     )
     transform_data_v2 = DummyOperator(task_id='transform_data_v2')
     load_data_v2 = DummyOperator(task_id='load_data_v2')

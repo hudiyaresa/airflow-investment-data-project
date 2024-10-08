@@ -114,9 +114,7 @@ services:
       - warehouse_db:/var/lib/postgresql/data
 
   spark-master:
-    build: 
-      context: ./spark
-      dockerfile: Dockerfile
+    image: bitnami/spark:latest
     command: bin/spark-class org.apache.spark.deploy.master.Master
     container_name: spark-master
     ports:
@@ -126,9 +124,7 @@ services:
       - airflow-networks
 
   spark-worker-1:
-    build: 
-      context: ./spark
-      dockerfile: Dockerfile
+    image: bitnami/spark:latest
     container_name: spark-worker-1
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
@@ -142,9 +138,7 @@ services:
       - airflow-networks
 
   spark-worker-2:
-    build: 
-      context: ./spark
-      dockerfile: Dockerfile
+    image: bitnami/spark:latest
     container_name: spark-worker-2
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
@@ -158,9 +152,7 @@ services:
       - airflow-networks
 
   spark-worker-3:
-    build: 
-      context: ./spark
-      dockerfile: Dockerfile
+    image: bitnami/spark:latest
     container_name: spark-worker-3
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     depends_on:
