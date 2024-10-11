@@ -50,7 +50,7 @@ def dellstore_db(incremental):
             SparkSubmitOperator(
                 task_id=table_name,
                 conn_id="spark-conn",
-                application="dags/etl_pipeline/tasks/staging/components/extract.py",
+                application="dags/dellstore_staging/tasks/components/extract.py",
                 application_args=[
                     f'{table_name}',
                     f'{incremental}',
@@ -77,7 +77,7 @@ def dellstore_db(incremental):
             current_task = SparkSubmitOperator(
                 task_id=table_name,
                 conn_id="spark-conn",
-                application="dags/etl_pipeline/tasks/staging/components/load.py",
+                application="dags/dellstore_staging/tasks/components/load.py",
                 application_args=[
                     table_name,
                     str(table_pkey[table_name]),
