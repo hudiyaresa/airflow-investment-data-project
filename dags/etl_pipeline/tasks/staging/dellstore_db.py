@@ -1,9 +1,32 @@
 from airflow.decorators import task_group
-from airflow.operators.python import PythonOperator
 from airflow.models import Variable
-from etl_pipeline.tasks.staging.components.extract import Extract
-from etl_pipeline.tasks.staging.components.load import Load
 from airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator
+
+# Constants
+DATE = '{{ ds }}'
+
+# Define the list of JAR files required for Spark
+jar_list = [
+    '/opt/spark/jars/hadoop-aws-3.3.1.jar',
+    '/opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar',
+    '/opt/spark/jars/postgresql-42.2.23.jar'
+]
+
+# Define Spark configuration
+spark_conf = {
+    'spark.hadoop.fs.s3a.access.key': 'minio',
+    'spark.hadoop.fs.s3a.secret.key': 'minio123',
+    'spark.hadoop.fs.s3a.endpoint': 'http://minio:9000',
+    'spark.hadoop.fs.s3a.path.style.access': 'true',
+    'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
+    'spark.dynamicAllocation.enabled': 'true',
+    'spark.dynamicAllocation.maxExecutors': '3',
+    'spark.dynamicAllocation.minExecutors': '1',
+    'spark.dynamicAllocation.initialExecutors': '1',
+    'spark.executor.memory': '4g',  # Define RAM per executor
+    'spark.executor.cores': '2',  # Define cores per executor
+    'spark.scheduler.mode': 'FAIR'
+}
 
 @task_group
 def dellstore_db(incremental):
@@ -22,27 +45,6 @@ def dellstore_db(incremental):
         # Get the list of tables to extract from Airflow Variable
         table_to_extract = eval(Variable.get('list_dellstore_table'))
 
-        # Define the list of JAR files required for Spark
-        jar_list = [
-            '/opt/spark/jars/hadoop-aws-3.3.1.jar',
-            '/opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar',
-            '/opt/spark/jars/postgresql-42.2.23.jar'
-        ]
-
-        # Define Spark configuration
-        spark_conf = {
-            'spark.hadoop.fs.s3a.access.key': 'minio',
-            'spark.hadoop.fs.s3a.secret.key': 'minio123',
-            'spark.hadoop.fs.s3a.endpoint': 'http://minio:9000',
-            'spark.hadoop.fs.s3a.path.style.access': 'true',
-            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem',
-            'spark.dynamicAllocation.enabled': 'true',
-            'spark.dynamicAllocation.maxExecutors': '3',
-            'spark.dynamicAllocation.minExecutors': '1',
-            'spark.dynamicAllocation.initialExecutors': '1',
-            'spark.scheduler.mode': 'FAIR'
-        }
-
         # Create a SparkSubmitOperator for each table to extract
         for table_name in table_to_extract:
             SparkSubmitOperator(
@@ -50,8 +52,9 @@ def dellstore_db(incremental):
                 conn_id="spark-conn",
                 application="dags/etl_pipeline/tasks/staging/components/extract.py",
                 application_args=[
-                    table_name,
-                    str(incremental)
+                    f'{table_name}',
+                    f'{incremental}',
+                    f'{DATE}'
                 ],
                 conf=spark_conf,
                 jars=','.join(jar_list),
@@ -66,22 +69,6 @@ def dellstore_db(incremental):
         # Get the list of tables to load and their primary keys from Airflow Variable
         table_to_load = eval(Variable.get('list_dellstore_table'))
         table_pkey = eval(Variable.get('pkey_dellstore_table'))
-
-        # Define the list of JAR files required for Spark
-        jar_list = [
-            '/opt/spark/jars/hadoop-aws-3.3.1.jar',
-            '/opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar',
-            '/opt/spark/jars/postgresql-42.2.23.jar'
-        ]
-
-        # Define Spark configuration
-        spark_conf = {
-            'spark.hadoop.fs.s3a.access.key': 'minio',
-            'spark.hadoop.fs.s3a.secret.key': 'minio123',
-            'spark.hadoop.fs.s3a.endpoint': 'http://minio:9000',
-            'spark.hadoop.fs.s3a.path.style.access': 'true',
-            'spark.hadoop.fs.s3a.impl': 'org.apache.hadoop.fs.s3a.S3AFileSystem'
-        }
 
         previous_task = None
 

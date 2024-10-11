@@ -1,19 +1,8 @@
-from airflow.providers.postgres.hooks.postgres import PostgresHook
-from airflow.exceptions import AirflowSkipException, AirflowException
-from airflow.models import Variable, TaskInstance
-
-from etl_pipeline.tasks.warehouse.components.validations import Validation, ValidationType
-from helper.minio import CustomMinio
-
-import re
-import pandas as pd
+from airflow.exceptions import AirflowException
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import col, regexp_replace
 from pyspark.sql import functions as F
+
 import sys
-from io import BytesIO
-import tempfile
-import os
 
 # Define paths for transformed, valid, and invalid data
 transformed_data_path = 's3a://transformed-data/'
@@ -53,8 +42,8 @@ class ExtractTransform:
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("categories doesn't have new data. Skipped...")
                 return
@@ -93,13 +82,17 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.customers) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.customers WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
-            df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
+            df = spark.read.jdbc(
+                url=postgres_staging, 
+                table=query, 
+                properties=postgres_properties
+            )
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("customers doesn't have new data. Skipped...")
                 return
@@ -148,13 +141,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.products) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.products WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("products doesn't have new data. Skipped...")
                 return
@@ -202,13 +195,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.inventory) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.inventory WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("inventory doesn't have new data. Skipped...")
                 return
@@ -256,13 +249,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.orders) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.orders WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("orders doesn't have new data. Skipped...")
                 return
@@ -295,9 +288,6 @@ class ExtractTransform:
             # Stop Spark session
             spark.stop()
 
-        except AirflowSkipException as e:
-            raise e
-        
         except Exception as e:
             raise AirflowException(f"Error when extracting and transforming data from orders: {e}")
 
@@ -315,13 +305,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.orderlines) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.orderlines WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("orderlines doesn't have new data. Skipped...")
                 return
@@ -379,13 +369,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.cust_hist) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.cust_hist WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("cust_hist doesn't have new data. Skipped...")
                 return
@@ -407,7 +397,7 @@ class ExtractTransform:
             # Extract data from the `orders` table
             orders_df = spark.read.jdbc(url=postgres_warehouse, 
                                         table="(SELECT * FROM orders) as data", 
-                                        properties=postgres_properties)
+                                        properties=postgres_properties).drop('customer_id')
 
             # Lookup `order_id` from `orders` table based on `orderid`
             df = df.join(orders_df, df.order_nk == orders_df.order_nk, "inner")
@@ -420,13 +410,14 @@ class ExtractTransform:
             # Lookup `product_id` from `product` table based on `prod_id`
             df = df.join(products_df, df.product_nk == products_df.product_nk, "left") \
                    .select(df['*'], products_df.product_id)
-            
+
             df = df.select('customer_id', 'order_id', 'product_id')
 
             # Write transformed data to CSV
             df.write \
                 .format("csv") \
                 .option("header", "true") \
+                .option("delimiter", ";") \
                 .mode("overwrite") \
                 .save(f"{transformed_data_path}/cust_hist")
 
@@ -449,29 +440,32 @@ class ExtractTransform:
 
             # Define query for extracting data
             query = "(SELECT * FROM staging.order_status_analytic) as data"
-            if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
 
             # Read data from PostgreSQL
-            df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
+            df = spark.read.jdbc(
+                url=postgres_staging, 
+                table=query, 
+                properties=postgres_properties
+            )
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("order_status_analytic doesn't have new data. Skipped...")
                 return
 
             # Transform data
             df = df.withColumnRenamed('orderid', 'order_nk')
-
+    
             # Extract data from the `orders` table
             orders_df = spark.read.jdbc(url=postgres_warehouse, 
                                         table="(SELECT * FROM orders) as data", 
                                         properties=postgres_properties)
 
+
             # Lookup `order_id` from `orders` table based on `orderid`
             df = df.join(orders_df, df.order_nk == orders_df.order_nk, "inner") \
-                   .select('order_nk', 'sum_stock', 'status')
+                   .select('order_id', orders_df.order_nk.alias('order_nk'), 'sum_stock', 'status')
 
             # Write transformed data to CSVs
             df.write \
@@ -501,13 +495,13 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.customer_orders_history) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.customer_orders_history WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from PostgreSQL
             df = spark.read.jdbc(url=postgres_staging, table=query, properties=postgres_properties)
             
+            # Check if DataFrame is empty
             if df.isEmpty():
-                # If no new data, stop Spark session and skip
                 spark.stop()
                 print("customers_history doesn't have new data. Skipped...")
                 return
@@ -576,7 +570,7 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.customer_orders_history) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.customer_orders_history WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from staging database
             df = spark.read.jdbc(
@@ -645,7 +639,7 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.customer_orders_history) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.customer_orders_history WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from staging database
             df = spark.read.jdbc(
@@ -671,6 +665,9 @@ class ExtractTransform:
             # Deduplication based on order_nk
             df = df.dropDuplicates(['order_nk'])
 
+            # Drop unnecessary columns
+            df = df.drop('customer_id')
+
             # Extract data from the `customers` table
             customer_df = spark.read.jdbc(
                 url=postgres_warehouse,
@@ -680,10 +677,11 @@ class ExtractTransform:
 
             # Lookup `customer_id` from `customers` table based on `customer_nk`
             df = df.join(customer_df, df.customer_nk == customer_df.customer_nk, "left") \
-                   .select(df['*'], customer_df.customer_id)
+                   .select(df['*'], customer_df.customer_id) \
+                   .drop('created_at', 'customer_nk')
 
             # Get relevant columns
-            df = df.select('order_nk', 'customer_nk', 'order_date', 'net_amount', 'tax', 'total_amount')
+            df = df.select('order_nk', 'customer_id', 'order_date', 'net_amount', 'tax', 'total_amount')
 
             # Write transformed data to CSV
             df.write \
@@ -695,9 +693,6 @@ class ExtractTransform:
 
             # Stop Spark session
             spark.stop()
-
-        except AirflowSkipException as e:
-            raise e
 
         except Exception as e:
             raise AirflowException(f"Error when extracting and transforming data from _orders_history: {e}")
@@ -716,7 +711,7 @@ class ExtractTransform:
             # Define query for extracting data
             query = "(SELECT * FROM staging.customer_orders_history) as data"
             if incremental:
-                query += f" WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY';"
+                query = f"(SELECT * FROM staging.customer_orders_history WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
 
             # Read data from staging database
             df = spark.read.jdbc(

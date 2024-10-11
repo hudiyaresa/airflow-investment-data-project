@@ -20,13 +20,14 @@ class Extract:
     """
 
     @staticmethod
-    def _dellstore_db(table_name, incremental):
+    def _dellstore_db(table_name, incremental, date):
         """
         Extract data from Dellstore database.
 
         Args:
             table_name (str): Name of the table to extract data from.
             incremental (bool): Flag to indicate if the extraction is incremental.
+            date (str): Date string for incremental extraction.
 
         Raises:
             AirflowException: If there is an error during extraction.
@@ -42,7 +43,6 @@ class Extract:
             object_name = f'/dellstore-db/{table_name}'
 
             if incremental:
-                date = '{{ds}}'
                 query = f"(SELECT * FROM {table_name} WHERE created_at::DATE = '{date}'::DATE - INTERVAL '1 DAY') as data"
                 object_name = f'/dellstore-db/{table_name}-{(pd.to_datetime(date) - timedelta(days=1)).strftime("%Y-%m-%d")}'
 
@@ -81,7 +81,7 @@ class Extract:
             spark.stop()
 
         except Exception as e:
-            raise AirflowException(f"Error when extracting {table_name} : {str(e)}")
+            raise AirflowException(f"Error when extracting {table_name}: {str(e)}")
 
     @staticmethod
     def _dellstore_api(ds):
@@ -110,6 +110,19 @@ class Extract:
             json_data = response.json()
             if not json_data:
                 raise AirflowSkipException("No new data in Dellstore API. Skipped...")
+
+            # Replace newline characters in JSON data
+            def replace_newlines(obj):
+                if isinstance(obj, dict):
+                    return {k: replace_newlines(v) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [replace_newlines(elem) for elem in obj]
+                elif isinstance(obj, str):
+                    return obj.replace('\n', ' ')
+                else:
+                    return obj
+
+            json_data = replace_newlines(json_data)
 
             # Save JSON data to S3
             bucket_name = 'extracted-data'
@@ -162,10 +175,11 @@ if __name__ == "__main__":
     """
     Main entry point for the script. Extracts data from Dellstore database based on command line arguments.
     """
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         sys.exit(-1)
 
     table_name = sys.argv[1]    
     incremental = sys.argv[2].lower() == 'true'
+    date = sys.argv[3]
 
-    Extract._dellstore_db(table_name, incremental)
+    Extract._dellstore_db(table_name, incremental, date)

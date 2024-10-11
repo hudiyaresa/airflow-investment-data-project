@@ -11,18 +11,18 @@ def dellstore_api():
     """
 
     # Define the extract task
-    extract = PythonOperator(
+    extract_task = PythonOperator(
         task_id='extract',
         python_callable=Extract._dellstore_api,
         trigger_rule='none_failed'
     )
 
     # Define the load task
-    load = PythonOperator(
+    load_task = PythonOperator(
         task_id='load',
         python_callable=Load._dellstore_api,
         trigger_rule='none_failed'
     )
 
     # Set task dependencies
-    extract >> load
+    extract_task >> load_task

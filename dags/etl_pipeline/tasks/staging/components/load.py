@@ -1,13 +1,14 @@
 from airflow.exceptions import AirflowException, AirflowSkipException
 from pyspark.sql import SparkSession
 from datetime import timedelta
-import pandas as pd
 from pangres import upsert
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from sqlalchemy import create_engine
+from helper.minio import MinioClient, CustomMinio
+
+import pandas as pd
 import sys
 import json
-from helper.minio import MinioClient, CustomMinio
 
 class Load:
     """
@@ -43,9 +44,14 @@ class Load:
             if incremental:
                 object_name = f'/dellstore-db/{table_name}-{(pd.to_datetime(date) - timedelta(days=1)).strftime("%Y-%m-%d")}'
 
-            # Read data from S3
-            df = spark.read.options(delimiter=";", header=True).csv(f"s3a://{bucket_name}/{object_name}")
-            if df.rdd.isEmpty():
+            try:
+                # Read data from S3
+                df = spark.read.options(
+                    delimiter=";",
+                    header=True
+                ).csv(f"s3a://{bucket_name}/{object_name}")
+            
+            except:
                 spark.stop()
                 print(f"{table_name} doesn't have new data. Skipped...")
                 return
@@ -68,7 +74,6 @@ class Load:
             )
             
         except Exception as e:
-            engine.dispose()
             raise AirflowException(f"Error when loading {table_name}: {str(e)}")
 
     @staticmethod
