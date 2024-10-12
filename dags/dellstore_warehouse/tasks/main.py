@@ -170,8 +170,6 @@ def step_2(incremental):
         """
         Extract and transform data for products and orders.
         """
-        tables = ['products_history', 'orders_history', 'products', 'orders']
-
         tables_and_dependencies = {
             'products_history': "dellstore_api.load",
             'orders_history': "dellstore_api.load",
