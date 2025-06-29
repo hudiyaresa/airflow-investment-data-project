@@ -16,6 +16,7 @@ services:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./variables_and_connections:/opt/airflow/variables_and_connections
     networks:
       - airflow-networks
 
@@ -47,20 +48,20 @@ services:
     volumes:
       - profile_quality_db:/var/lib/postgresql/data
 
-  dellstore_db: 
+  investment_db: 
     image: postgres:latest
-    container_name: dellstore_db
+    container_name: investment_db
     environment:
-      POSTGRES_USER: ${DELLSTORE_DB_USER}
-      POSTGRES_PASSWORD: ${DELLSTORE_DB_PASSWORD}
-      POSTGRES_DB: ${DELLSTORE_DB_NAME}
+      POSTGRES_USER: ${INVESTMENT_DB_USER}
+      POSTGRES_PASSWORD: ${INVESTMENT_DB_PASSWORD}
+      POSTGRES_DB: ${INVESTMENT_DB_NAME}
     ports:
       - 5435:5432
     networks:
       - airflow-networks
     volumes:
-      - ./dellstore_db:/docker-entrypoint-initdb.d
-      - dellstore_data:/var/lib/postgresql/data
+      - ./investment_db/source:/docker-entrypoint-initdb.d
+      - investment_data:/var/lib/postgresql/data
 
 
   minio:
@@ -85,19 +86,18 @@ services:
     networks:
       - airflow-networks
 
-  staging_db:
-    image: postgres:latest
-    container_name: staging_db
-    environment:
-      POSTGRES_USER: ${STAGING_DB_USER}
-      POSTGRES_PASSWORD: ${STAGING_DB_PASSWORD}
-      POSTGRES_DB: ${STAGING_DB_NAME}
-    ports:
-      - 5436:5432
-    networks:
-      - airflow-networks
-    volumes:
-      - staging_db:/var/lib/postgresql/data
+  createbuckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      /usr/bin/mc config host add myminio http://minio:9000 ${MINIO_ROOT_USER} ${MINIO_ROOT_PASSWORD};
+      /usr/bin/mc rm -r --force myminio/extracted-data;
+      /usr/bin/mc mb myminio/extracted-data;
+      /usr/bin/mc policy download myminio/extracted-data;
+      exit 0;
+      "      
 
   warehouse_db:
     image: postgres:latest
@@ -111,6 +111,8 @@ services:
     networks:
       - airflow-networks
     volumes:
+      - ./investment_db/warehouse/init.sql:/docker-entrypoint-initdb.d/01-init.sql
+      - ./investment_db/warehouse/etl_log.sql:/docker-entrypoint-initdb.d/02-etl_log.sql
       - warehouse_db:/var/lib/postgresql/data
 
   spark-master:
@@ -170,9 +172,9 @@ volumes:
     driver: local
     name: airflow_metadata
 
-  dellstore_data:
+  investment_data:
     driver: local
-    name: dellstore_data
+    name: investment_data
 
   minio-data:
     driver: local

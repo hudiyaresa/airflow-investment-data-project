@@ -6,8 +6,8 @@ This project aims to streamline the process of extracting, transforming, and loa
 
 The project is structured into two primary components:
 
-1. **etl_init**: This component is responsible for initializing the staging database by creating the necessary tables and setting up the environment for data extraction and loading. This includes database schema creation, data type definition, and indexing for optimal performance.
-2. **etl_pipeline**: This component is the core of the project, responsible for extracting data from various sources (databases, APIs, and spreadsheets), transforming the data as needed, and loading it into the staging database. This involves data cleansing, data mapping, and data validation to ensure data consistency and integrity.
+1. **data_profiling**: The profiling processes involves assessing and analyzing the data to understand its quality and structure before proceeding with any data integration or transformation. Store the data profiling to a table in postgres database.
+2. **data_pipeline**: This component is the core of the project, responsible for extracting data from various sources (databases, APIs, and spreadsheets), transforming the data as needed, and loading it into the staging database. This involves data cleansing, data mapping, and data validation to ensure data consistency and integrity.
 
 ## Technologies Used
 
@@ -17,9 +17,8 @@ The project leverages the following technologies to achieve its objectives:
 * **Python**: For scripting and data processing, utilizing its extensive libraries for data manipulation and analysis.
 * **PostgreSQL**: For database operations, providing a robust and scalable relational database management system.
 * **Minio**: For object storage, offering a highly available and durable storage solution for large datasets.
-* **Google Sheets API**: For spreadsheet data extraction, enabling seamless integration with Google Sheets for data retrieval.
 * **Requests library**: For API data extraction, simplifying HTTP requests for data retrieval from APIs.
-* **Pandas**: For data manipulation and analysis, providing a powerful library for data processing and analysis.
+<!-- * **Pandas**: For data manipulation and analysis, providing a powerful library for data processing and analysis. -->
 
 ## How to Use
 
@@ -27,8 +26,8 @@ To utilize this project effectively, follow these steps:
 
 1. **Dependency Installation**: Ensure all necessary dependencies are installed, including Apache Airflow, PostgreSQL, Minio, and the required Python libraries.
 2. **Airflow Configuration**: Configure the necessary connections in Airflow, including the PostgreSQL database, Minio object storage, and Google Sheets API.
-3. **etl_init DAG Trigger**: Trigger the **etl_init** DAG to initialize the staging database, ensuring all necessary tables and schema are created.
-4. **etl_pipeline DAG Trigger**: Trigger the **etl_pipeline** DAG to start the ETL process, extracting, transforming, and loading data into the staging database.
+3. **data_profiling DAG Trigger**: Trigger the **data_profiling** DAG to assess and analyze the data to understand its quality and strukture before further process for all tables.
+4. **data_pipeline DAG Trigger**: Trigger the **data_pipeline** DAG to start the ETL process, extracting, transforming, and loading data into the staging database.
 
 ## Contributing
 
