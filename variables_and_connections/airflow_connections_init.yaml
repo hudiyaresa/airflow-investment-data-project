@@ -40,6 +40,6 @@ slack_conn:
   extra: '{"timeout": null}'
   host: ''
   login: ''
-  password: https://hooks.slack.com/services/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
+  password: # fill your token here
   port: null
   schema: ''  
