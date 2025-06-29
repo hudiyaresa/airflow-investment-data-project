@@ -1,8 +1,9 @@
 from airflow.exceptions import AirflowSkipException, AirflowException
-from airflow.providers.google.common.hooks.base_google import GoogleBaseHook
 from helper.minio import CustomMinio
+from helper.conn import get_jdbc_url
 from datetime import timedelta
 from airflow.models import Variable
+from dotenv import load_dotenv
 
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, regexp_replace
@@ -11,8 +12,14 @@ import pandas as pd
 import requests
 import gspread
 import sys
+import os
+
+load_dotenv()
 
 BASE_PATH = "/opt/airflow/dags"
+source_db = get_jdbc_url("source")
+source_db_user = os.getenv("INVESTMENT_DB_USER")
+source_db_password = os.getenv("INVESTMENT_DB_PASSWORD")
 
 class Extract:
     """
@@ -48,11 +55,11 @@ class Extract:
 
             # Read data from database
             df = spark.read.jdbc(
-                url="jdbc:postgresql://investment_db:5432/investment_db",
+                url=source_db,
                 table=query,
                 properties={
-                    "user": "postgres",
-                    "password": "postgres",
+                    "user": source_db_user,
+                    "password": source_db_password,
                     "driver": "org.postgresql.Driver"
                 }
             )
@@ -84,12 +91,9 @@ class Extract:
             raise AirflowException(f"Error when extracting {table_name}: {str(e)}")
 
     @staticmethod
-    def _investment_api(ds):
+    def _investment_api():
         """
         Extract data from Investment API.
-
-        Args:
-            ds (str): Date string.
 
         Raises:
             AirflowException: If failed to fetch data from Investment API.
@@ -98,8 +102,7 @@ class Extract:
         try:
             # Fetch data from API
             response = requests.get(
-                url=Variable.get('investment_api_url'),
-                params={"start_date": ds, "end_date": ds},
+                url=Variable.get('investment_api_url')
             )
 
             # Check response status
@@ -124,19 +127,69 @@ class Extract:
 
             json_data = replace_newlines(json_data)
 
+            # Convert JSON to DataFrame
+            df = pd.DataFrame(json_data)
+
+            # Save to CSV in memory
+            csv_buffer = io.StringIO()
+            df.to_csv(csv_buffer, index=False)            
+
             # Save JSON data to S3
             bucket_name = 'extracted-data'
-            object_name = f'/investment-api/data-{(pd.to_datetime(ds) - timedelta(days=1)).strftime("%Y-%m-%d")}.json'
-            CustomMinio._put_json(json_data, bucket_name, object_name)
-        
+            object_name = f'/investment-api/milestone-data.csv'
+            CustomMinio._put_file(
+                file_data=csv_buffer.getvalue(),
+                bucket_name=bucket_name,
+                object_name=object_name,
+                content_type='text/csv'
+            )
+
         except AirflowSkipException as e:
             raise e
-        
+
         except AirflowException as e:
             raise e
-        
+
         except Exception as e:
             raise AirflowException(f"Error when extracting Investment API: {str(e)}")
+        
+
+    @staticmethod
+    def _investment_csv(data_name):
+        try:
+
+            spark = SparkSession.builder \
+                .appName(f"Extract CSV - {data_name}") \
+                .getOrCreate()
+
+            csv_read = spark.read.csv(f"/opt/airflow/external/{data_name}.csv", header=True)
+
+            df = csv_read.toPandas()            
+
+            # Save to CSV in memory
+            csv_buffer = io.StringIO()
+            df.to_csv(csv_buffer, index=False)            
+
+            # Save JSON data to S3
+            bucket_name = 'extracted-data'
+            object_name = f'/investment-csv/{data_name}.csv'
+            CustomMinio._put_file(
+                file_data=csv_buffer.getvalue(),
+                bucket_name=bucket_name,
+                object_name=object_name,
+                content_type='text/csv'
+            )
+
+        spark.stop()            
+
+        except AirflowSkipException as e:
+            raise e
+
+        except AirflowException as e:
+            raise e
+
+        except Exception as e:
+            raise AirflowException(f"Error when extracting Investment API: {str(e)}")        
 
 if __name__ == "__main__":
     """

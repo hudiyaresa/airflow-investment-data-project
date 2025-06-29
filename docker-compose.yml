@@ -16,6 +16,7 @@ services:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
+      - ./investment_db/external:/opt/airflow/external
       - ./variables_and_connections:/opt/airflow/variables_and_connections
     networks:
       - airflow-networks
@@ -183,10 +184,6 @@ volumes:
   profile_quality_db:
     driver: local
     name: profile_quality_db
-
-  staging_db:
-    driver: local
-    name: staging_db
 
   warehouse_db:
     driver: local

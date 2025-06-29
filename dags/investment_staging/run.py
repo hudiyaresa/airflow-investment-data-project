@@ -1,6 +1,7 @@
 from airflow.decorators import dag
 from investment_staging.tasks.investment_db import investment_db
 from investment_staging.tasks.investment_api import investment_api
+from investment_staging.tasks.investment_csv import investment_csv
 from datetime import datetime
 from helper.callbacks.slack_notifier import slack_notifier
 from airflow.models.variable import Variable
@@ -27,8 +28,11 @@ def investment_staging_dag():
     
     # Run the investment_api task
     api_task = investment_api()
+
+    # Run the investment_csv task
+    csv_task = investment_csv()
         
     # Set the task dependencies
-    [db_task, api_task]
+    [db_task, api_task, csv_task]
 
 investment_staging_dag()

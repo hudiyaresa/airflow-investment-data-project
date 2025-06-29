@@ -5,6 +5,7 @@ from pangres import upsert
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from sqlalchemy import create_engine
 from helper.minio import MinioClient, CustomMinio
+from io import StringIO
 
 import pandas as pd
 import sys
@@ -64,7 +65,7 @@ class Load:
             pandas_df = pandas_df.set_index(table_pkey)
 
             # Create SQLAlchemy engine and upsert data
-            engine = create_engine(PostgresHook(postgres_conn_id='staging_db').get_uri())
+            engine = create_engine(PostgresHook(postgres_conn_id='warehouse_db').get_uri())
             upsert(
                 con=engine,
                 df=pandas_df,
@@ -73,6 +74,9 @@ class Load:
                 if_row_exists='update'
             )
             
+            finally:
+                engine.dispose()
+
         except Exception as e:
             raise AirflowException(f"Error when loading {table_name}: {str(e)}")
 
@@ -85,53 +89,48 @@ class Load:
             ds (str): Date string for the data to load.
         """
         bucket_name = 'extracted-data'
-        object_name = f'/investment-api/data-{(pd.to_datetime(ds) - timedelta(days=1)).strftime("%Y-%m-%d")}.json'
+        object_name = f'/investment-api/milestone-data.csv'
 
         try:
             # Create SQLAlchemy engine
-            engine = create_engine(PostgresHook(postgres_conn_id='staging_db').get_uri())
+            engine = create_engine(PostgresHook(postgres_conn_id='warehouse_db').get_uri())
 
-            try:
                 # Get data from Minio
                 minio_client = MinioClient._get()
                 try:
                     data = minio_client.get_object(bucket_name=bucket_name, object_name=object_name).read().decode('utf-8')
                 except:
-                    raise AirflowSkipException(f"investment_api doesn't have new data. Skipped...")
+                    raise AirflowSkipException(f"investment_api doesn't have new data or failed to read: {e}")
 
                 # Load data into Pandas DataFrame
-                data = json.loads(data)
-                df = pd.json_normalize(data)
-                # df = df.set_index(['customer_id', 'order_id', 'orderline_id'])
+                df = pd.read_csv(StringIO(data))
 
                 # Upsert data into database
                 upsert(
                     con=engine,
                     df=df,
-                    table_name='customer_orders_history',
+                    table_name='milestone',
                     schema='staging',
                     if_row_exists='update'
                 )
-            except AirflowSkipException as e:
-                engine.dispose()
-                raise e
-            
-            except Exception as e:
-                engine.dispose()
-                raise AirflowException(f"Error when loading data from Investment API: {str(e)}")
-            
+
         except AirflowSkipException as e:
             raise e
-            
         except Exception as e:
-            raise e
+            raise AirflowException(f"Error when loading data from Investment API: {str(e)}")
+        finally:
+            if engine:
+                engine.dispose()
 
 
 if __name__ == "__main__":
     """
-    Main entry point for the script. Loads data into Investment database based on command line arguments.
+    CLI Entry point:
+    Usage:
+        python script.py <table_name> <primary_key_list> <incremental:true|false> <date>
     """
     if len(sys.argv) != 5:
+        print("Usage: python script.py <table_name> <primary_key_list> <incremental:true|false> <date>")
         sys.exit(-1)
 
     table_name = sys.argv[1]

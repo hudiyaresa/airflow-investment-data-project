@@ -13,6 +13,11 @@
         "relationships",
         "milestones"
     ],
+    "list_investment_csv": [
+        "dim_date",
+        "people",
+        "relationships"
+    ],    
     "pkey_investment_table": {
         "acquisition": "acquisition_id",
         "company": "office_id",
