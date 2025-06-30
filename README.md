@@ -82,7 +82,6 @@ The pipeline consists of:
 1. **Staging Layer**: Raw extracted data, type-casted minimally.
 2. **Warehouse Layer**: Cleaned, transformed, and relational-ready data for analysis.
 
----
 
 ## Logging System
 
