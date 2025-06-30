@@ -1,0 +1,106 @@
+{
+    "person_in_charge": "Hudiya Resa",
+    "created_at": "2025-05-17",
+    "total_rows": 30412,
+    "total_columns": 9,
+    "report": {
+        "milestone_id": {
+            "data_type": "IntegerType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2139",
+                "3309",
+                "4132",
+                "6333",
+                "7576"
+            ]
+        },
+        "created_at": {
+            "data_type": "TimestampType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2009-11-11 21:21:36",
+                "2010-03-04 00:28:19",
+                "2010-05-03 16:55:25",
+                "2010-08-18 21:40:06",
+                "2010-10-11 17:06:17"
+            ],
+            "percentage_valid_date": 100.0
+        },
+        "description": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "Mike Jetter founds \u00e2\u0080\u009cVisualizing Ideas\u00e2\u0080\u009d, which later turns into Mindjet",
+                "Entrust built and sold the first commercially available publi-key infrastructure (PKI)",
+                "Adding resources to provide the next logical step in the graphic arts process, Widen purchases printing presses and enters the short-run print market. Specializing in four and six-color processes allows Widen to focus on providing exceptional color for cu",
+                "Launched WorldVillage.com.  One of the first 25,000 websites in the world.",
+                "Ogone, formerly known as Abssys Consulting, was founded in 1996 by Mr. Harold Mechelynck and Mr. Thierry Pierson."
+            ]
+        },
+        "milestone_at": {
+            "data_type": "DateType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "1995-01-01",
+                "1994-06-28",
+                "1994-08-15",
+                "1994-10-15",
+                "1994-01-01"
+            ],
+            "percentage_valid_date": 100.0
+        },
+        "milestone_code": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "other"
+            ]
+        },
+        "object_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "c:11901",
+                "c:40991",
+                "c:35045",
+                "c:53927",
+                "c:39074"
+            ]
+        },
+        "source_description": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "NaN",
+                "US Patent and trademark office, EPO Europe, Handelsregister",
+                "Champase",
+                "Handelsregister NL, Handelsregister NL Curacao,",
+                "History"
+            ]
+        },
+        "source_url": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "http://fog.com",
+                "http://www.entrust.com/corporate/history.htm",
+                "http://techcrunch.com/2010/03/01/mobclix-acquires-iphone-app-sales-analytics-software-heartbeat/",
+                "http://www.theworld.org/",
+                "http://findarticles.com/p/articles/mi_m0EIN/is_1996_March_5/ai_18052449/?tag=content;col1"
+            ]
+        },
+        "updated_at": {
+            "data_type": "TimestampType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2009-11-11 23:19:29",
+                "2010-03-04 19:04:20",
+                "2010-05-05 18:48:35",
+                "2010-08-18 22:46:41",
+                "2010-10-13 01:56:07"
+            ],
+            "percentage_valid_date": 100.0
+        }
+    }
+}

@@ -1,0 +1,120 @@
+{
+    "person_in_charge": "Hudiya Resa",
+    "created_at": "2025-04-25",
+    "total_rows": 134726,
+    "total_cols": 10,
+    "report": {
+        "relationship_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "675",
+                "829",
+                "1090",
+                "1159",
+                "1436"
+            ],
+            "percentage_valid_date": 99.41
+        },
+        "person_object_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "p:73",
+                "p:171",
+                "p:214",
+                "p:486",
+                "p:683"
+            ]
+        },
+        "relationship_object_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "c:933",
+                "c:2009",
+                "c:396",
+                "c:3146",
+                "c:3173"
+            ],
+            "percentage_valid_date": 0.0
+        },
+        "start_at": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 53.48,
+            "unique_value": [
+                "2010-10-01 00:00:00.000",
+                "2010-05-24 00:00:00.000",
+                "2006-09-19 00:00:00.000",
+                "2006-04-15 00:00:00.000",
+                "1969-01-01 00:00:00.000"
+            ],
+            "percentage_valid_date": 46.52
+        },
+        "end_at": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 85.71,
+            "unique_value": [
+                "2010-10-01 00:00:00.000",
+                "2010-05-24 00:00:00.000",
+                "2011-08-03 00:00:00.000",
+                "2009-04-29 00:00:00.000",
+                "2011-08-31 00:00:00.000"
+            ],
+            "percentage_valid_date": 14.29
+        },
+        "is_past": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "false"
+            ]
+        },
+        "sequence": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "363048",
+                "97717",
+                "284036",
+                "28463",
+                "48590"
+            ]
+        },
+        "title": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 4.03,
+            "unique_value": [
+                "Founder & CEO",
+                "VP, Platform & Technology Develop",
+                "Director of Product Marketing",
+                "COO/ Founder",
+                "Director of Developer Platform"
+            ]
+        },
+        "created_at": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2007-05-31 21:28:58.000",
+                "2007-06-09 08:47:31.000",
+                "2007-07-11 13:08:34.000",
+                "2007-07-28 04:12:50.000",
+                "2007-08-04 06:57:33.000"
+            ],
+            "percentage_valid_date": 100.0
+        },
+        "updated_at": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2010-01-27 00:32:09.000",
+                "2008-04-13 18:34:47.000",
+                "2011-09-05 20:20:58.000",
+                "2013-08-29 19:08:03.000",
+                "2012-09-16 09:05:16.000"
+            ],
+            "percentage_valid_date": 100.0
+        }
+    }
+}

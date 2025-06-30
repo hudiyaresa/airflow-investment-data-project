@@ -1,0 +1,76 @@
+{
+    "person_in_charge": "Hudiya Resa",
+    "created_at": "2025-04-25",
+    "total_rows": 59407,
+    "total_columns": 6,
+    "report": {
+        "investment_id": {
+            "data_type": "IntegerType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "148",
+                "833",
+                "463",
+                "471",
+                "496"
+            ]
+        },
+        "funding_round_id": {
+            "data_type": "IntegerType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "148",
+                "463",
+                "496",
+                "1088",
+                "1342"
+            ]
+        },
+        "funded_object_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "c:4366",
+                "c:5032",
+                "c:6249",
+                "c:6758",
+                "c:3638"
+            ]
+        },
+        "investor_object_id": {
+            "data_type": "StringType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "f:339",
+                "f:200",
+                "f:197",
+                "f:1939",
+                "f:2162"
+            ]
+        },
+        "created_at": {
+            "data_type": "TimestampType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2007-07-18 15:56:25",
+                "2007-09-03 12:50:21",
+                "2007-07-31 08:17:58",
+                "2007-11-22 18:58:27",
+                "2008-02-05 22:44:51"
+            ],
+            "percentage_valid_date": 100.0
+        },
+        "updated_at": {
+            "data_type": "TimestampType()",
+            "percentage_missing_value": 0.0,
+            "unique_value": [
+                "2013-05-30 10:36:47",
+                "2013-05-02 01:14:39",
+                "2008-07-23 05:23:00",
+                "2008-02-25 00:25:17",
+                "2010-03-04 10:36:27"
+            ],
+            "percentage_valid_date": 100.0
+        }
+    }
+}
