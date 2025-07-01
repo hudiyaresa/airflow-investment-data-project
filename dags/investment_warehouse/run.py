@@ -14,6 +14,7 @@ default_args = {
 }
 
 @dag(
+    dag_id="investment_warehouse",        
     start_date=datetime(2024, 9, 1),
     schedule="@daily",
     catchup=False,

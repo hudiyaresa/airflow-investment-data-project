@@ -218,13 +218,6 @@ airflow dags trigger investment_data_profiling
 airflow dags trigger investment_data_pipeline
 ```
 
-### Running Spark manually (optional)
-
-```bash
-docker exec -it pyspark_project_container /bin/bash
-spark-submit your_etl_script.py
-```
-
 ---
 
 ## Expected Output for Each Process

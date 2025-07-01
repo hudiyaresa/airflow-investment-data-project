@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS data_profile_quality (
+CREATE TABLE IF NOT EXISTS staging.data_profile_quality (
     profile_id SERIAL PRIMARY KEY,
     person_in_charge TEXT NOT NULL,
     source TEXT NOT NULL,
