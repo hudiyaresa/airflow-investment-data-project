@@ -4,8 +4,7 @@ from helper.callbacks.slack_notifier import slack_notifier
 from airflow.models.variable import Variable
 from investment_warehouse.tasks.main import (
     step_1,
-    step_2,
-    step_3
+    step_2
 )
 
 default_args = {
@@ -25,6 +24,6 @@ default_args = {
 
 def investment_warehouse():
     incremental_mode = eval(Variable.get('investment_warehouse_incremental_mode'))
-    step_1(incremental=incremental_mode) >> step_2(incremental=incremental_mode) >> step_3(incremental=incremental_mode)
+    step_1(incremental=incremental_mode) >> step_2(incremental=incremental_mode)
 
 investment_warehouse()

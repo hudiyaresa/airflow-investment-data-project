@@ -23,6 +23,7 @@ The **Startup Investment Data Pipeline** aims to create a unified and scalable s
 * [How the Pipeline Works & How to Run It](#how-the-pipeline-works--how-to-run-it)
 * [Expected Output for Each Process](#expected-output-for-each-process)
 * [License](#license)
+* [Documentations](#documentations)
 
 ---
 
@@ -234,3 +235,11 @@ airflow dags trigger investment_data_pipeline
 ## License
 
 This project is licensed under the **Apache License 2.0**. Contributions are welcome via pull requests.
+
+
+
+---
+
+## Documentations
+
+![DAG Investment Profiling](docs/dag_investment_data_profiling.png)

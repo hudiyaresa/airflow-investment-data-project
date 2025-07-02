@@ -1,1 +1,1 @@
-SELECT * FROM staging.data_profile_quality();
+SELECT * FROM data_profile_quality();

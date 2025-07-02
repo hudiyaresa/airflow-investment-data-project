@@ -1,11 +1,15 @@
 from airflow.providers.postgres.hooks.postgres import PostgresHook
+from investment_data_profiling.tasks.data_profile_and_quality import profile_and_quality
 from helper.minio import MinioClient, CustomMinio
 from helper.postgres import Execute
 from airflow.models import Variable
 from io import BytesIO
+import os
+import requests
 import json
+import pandas as pd
 
-BASE_PATH = "/opt/airflow/dags"
+BASE_PATH = "/opt/airflow"
 
 class Extract:
     def _investment_db():
@@ -36,7 +40,7 @@ class Extract:
         CustomMinio._put_csv(
             dataframe=profiled_df,
             bucket_name='data-profile-quality',
-            object_name='temp/api_milestone_data_profiled.csv'
+            object_name='temp/api_milestone_profiled.csv'
         )
 
     @staticmethod
@@ -48,7 +52,7 @@ class Extract:
         ]
 
         for item in files:
-            file_path = os.path.join(BASE_PATH, 'investment_db', 'external', item['file'])
+            file_path = os.path.join(BASE_PATH, 'external', item['file'])
             df = pd.read_csv(file_path)
 
             profiled_df = profile_and_quality(df, table_name=item['table'])
@@ -56,5 +60,5 @@ class Extract:
             CustomMinio._put_csv(
                 dataframe=profiled_df,
                 bucket_name='data-profile-quality',
-                object_name=f'temp/{item["table"]}_profiled.csv'
+                object_name=f'temp/local_csv_{item["table"]}_profiled.csv'
             )

@@ -28,7 +28,7 @@ warehouse_db:
 s3-conn:
   conn_type: aws
   description: connection to minio / s3 (data lake)
-  extra: '{"endpoint_url": "http://minio:9000"}'
+  extra: '{"endpoint_url": "minio:9000"}'
   host: ''
   login: minio
   password: minio123

@@ -180,8 +180,6 @@ class Extract:
                 content_type='text/csv'
             )
 
-        spark.stop()            
-
         except AirflowSkipException as e:
             raise e
 
@@ -189,7 +187,11 @@ class Extract:
             raise e
 
         except Exception as e:
-            raise AirflowException(f"Error when extracting Investment API: {str(e)}")        
+            raise AirflowException(f"Error when extracting Investment API: {str(e)}")     
+           
+        finally:
+            if spark is not None:
+                spark.stop()           
 
 if __name__ == "__main__":
     """

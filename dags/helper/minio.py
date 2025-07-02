@@ -6,7 +6,7 @@ import pandas as pd
 
 class MinioClient:
     def _get():
-        minio = BaseHook.get_connection('minio')
+        minio = BaseHook.get_connection('s3-conn')
         client = Minio(
             endpoint = minio.extra_dejson['endpoint_url'],
             access_key = minio.login,

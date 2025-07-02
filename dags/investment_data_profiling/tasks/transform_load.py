@@ -1,4 +1,4 @@
-from helper.minio import MinioClient
+from helper.minio import MinioClient, CustomMinio
 from helper.postgres import Execute
 import pandas as pd
 
@@ -24,21 +24,21 @@ class TransformLoad:
         )
         df.insert(
             loc = 1, 
-            column = "schema", 
+            column = "source", 
             value = "public(investment_db)"
         )
 
         Execute._insert_dataframe(
                 connection_id = "warehouse_db", 
-                query_path = "/investment_data_profling/query/insert_profile_quality.sql",
+                query_path = "investment_data_profiling/query/insert_profile_quality.sql",
                 dataframe = df
         )
 
     def _external_sources():
         sources = [
             {"object_name": "temp/api_milestone_data_profiled.csv", "person_in_charge": "Resa"},
-            {"object_name": "temp/dim_date_profiled.csv", "person_in_charge": "Resa"}
-            {"object_name": "temp/people_profiled.csv", "person_in_charge": "Resa"}
+            {"object_name": "temp/dim_date_profiled.csv", "person_in_charge": "Resa"},
+            {"object_name": "temp/people_profiled.csv", "person_in_charge": "Resa"},
             {"object_name": "temp/relationships_profiled.csv", "person_in_charge": "Resa"}
         ]
 
@@ -49,9 +49,14 @@ class TransformLoad:
             )
 
             df.insert(0, "person_in_charge", source["person_in_charge"])
+            df.insert(
+                loc = 1, 
+                column = "source", 
+                value = "-"
+            )            
 
             Execute._insert_dataframe(
                 connection_id="warehouse_db",
-                query_path="/investment_data_profiling/query/insert_profile_quality.sql",
+                query_path="investment_data_profiling/query/insert_profile_quality.sql",
                 dataframe=df
             )

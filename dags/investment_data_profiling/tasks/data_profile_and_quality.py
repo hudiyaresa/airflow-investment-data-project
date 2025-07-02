@@ -7,6 +7,8 @@ def profile_and_quality(df: pd.DataFrame, table_name) -> pd.DataFrame:
 
     for col in df.columns:
         series = df[col]
+        n_rows = len(df)
+        n_cols = len(df.columns)
 
         # Profiling
         data_type = str(series.dtype)
